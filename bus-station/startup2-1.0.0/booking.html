@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Startup - Startup Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/71fa6fa637.js" crossorigin="anonymous"></script>
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="booking.css">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block topnav">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Aqaba, Jordan</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+0777 777 777</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>bus_station@mail.com</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i
+                            class="fab fa-twitter fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i
+                            class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i
+                            class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i
+                            class="fab fa-instagram fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href=""><i
+                            class="fab fa-youtube fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar & Carousel Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <h1 class="m-0"><i class="fa-solid fa-bus me-2"></i>Bus Station</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse col-lg-7 mx-5 text-center text-lg-start d-flex justify-content-center" id="navbarCollapse">
+                <div class="navbar-nav ms-5 py-0 ">
+                    <a href="index.html" class="nav-item nav-link ">Home</a>
+                    <a href="schedule.html" class="nav-item nav-link">Schedule</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                    <a href="gallery.html" class="nav-item nav-link">Gallery</a>
+                </div>
+
+            </div>
+            <div class="navbar-nav ms-auto py-0 col-lg-3 text-center text-lg-end">
+                <a href="register.html" class="nav-link ">Register</a>
+                <a href="login.html" class="nav-link active">Login</a>
+            </div>
+        </nav>
+    </div>
+
+        <div class="container-fluid bg-primary py-5 bg-header">
+            <div class="row py-5">
+                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+                    <h1 class="display-4 text-white animated zoomIn">Booking</h1>
+                    <a href="" class="h5 text-white">Home</a>
+                    <i class="far fa-circle text-white px-2"></i>
+                    <a href="" class="h5 text-white">Booking</a>
+                </div>
+            </div>
+        </div>
+    <!-- Navbar End -->
+
+    <!-- start booking -->
+    <div class="container mt-5">
+        <div class="h3 text-muted">My Favorite</div>
+        <div id="starred" class="bg-white px-2 pt-1 mt-2">
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="d-flex mt-2 border-right">
+                                    <div class="box p-2 rounded">
+                                        <span class="fas fa-star text-primary px-1"></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column">
+                                    <div class="text-muted">Saturday</div>
+                                    <div class="d-flex align-items-center">
+                                        <b class="pl-2">12/05/2022</b>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column">
+                                    <div class="text-muted">Sunday</div>
+                                    <div><b>12/05/2022</b></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column">
+                                    <div class="text-muted">Monday</div>
+                                    <div><b>12/05/2022</b></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column">
+                                    <div class="d-flex align-items-center labels">
+                                        <div class="text-muted">Tuesday</div>
+                                    </div>
+                                    <div><b>12/05/2022</b></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column">
+                                    <div class="d-flex align-items-center labels">
+                                        <div class="text-muted">Wednesday</div>
+                                    </div>
+                                    <div><b>12/05/2022</b></div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="d-lg-flex align-items-lg-center py-4">
+            <div class="h3 text-muted">From:</div>
+            <div class="ml-auto">
+                <strong>--------</strong> 
+            </div>
+            &nbsp;&nbsp;&nbsp;
+            <div class="h3 text-muted">To:</div>
+            <div class="ml-auto">
+                <strong>--------</strong> 
+            </div>
+        </div>
+        <div id="top">
+            <div class="bg-white table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="d-flex mt-2 border-right">
+                                    <div class="box p-2 rounded">
+                                        <span class="text-primary px-2 font-weight-bold">01</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column">
+                                    <div class="text-muted">Name</div>
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <img src="https://freepngimg.com/thumb/bitcoin/59703-classic-bitcoin-virtual-cryptocurrency-currency-ethereum.png"
+                                                alt="" class="icons">
+                                        </div>
+                                        <b class="pl-2">Ethereum</b>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column">
+                                    <div class="text-muted">Market cap</div>
+                                    <div><b>$146,169,768.00</b></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column">
+                                    <div class="text-muted">Price</div>
+                                    <div><b>$8,536.79</b></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column">
+                                    <div class="d-flex align-items-center labels">
+                                        <div class="text-muted">Volume</div>
+                                        <div class="green-label mx-1 px-1 rounded">74</div>
+                                    </div>
+                                    <div><b>$7,576,878.89</b></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column">
+                                    <div class="d-flex align-items-center labels">
+                                        <div class="text-muted">Change</div>
+                                        <div class="orange-label mx-1 px-1 rounded">20%</div>
+                                    </div>
+                                    <div><b class="red">-0.18%</b></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="graph">
+                                    <img src="https://freepngimg.com/thumb/stock_market/25650-5-stock-market-graph-up-transparent-background.png"
+                                        alt="" id="ethereum">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex mt-2 border-right">
+                                    <div class="box p-2 rounded">
+                                        <span class="text-primary px-1 font-weight-bold">02</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column">
+                                    <div class="text-muted">Name</div>
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <img src="https://freepngimg.com/thumb/bitcoin/59526-cryptocurrency-badge-bitcoin-gold-png-file-hd-thumb.png"
+                                                alt="" class="icons">
+                                        </div>
+                                        <b class="pl-2">Bitcoin cash</b>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column">
+                                    <div class="text-muted">Market cap</div>
+                                    <div><b>$446,569,768.00</b></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column">
+                                    <div class="text-muted">Price</div>
+                                    <div><b>$8,836.79</b></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column">
+                                    <div class="d-flex align-items-center labels">
+                                        <div class="text-muted">Volume</div>
+                                        <div class="green-label mx-1 px-1 rounded">74</div>
+                                    </div>
+                                    <div><b>$7,576,878.89</b></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column">
+                                    <div class="d-flex align-items-center labels">
+                                        <div class="text-muted">Change</div>
+                                        <div class="orange-label mx-1 px-1 rounded">20%</div>
+                                    </div>
+                                    <div><b class="green">+4.00%</b></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="graph">
+                                    <img src="https://freepngimg.com/thumb/stock_market/25650-5-stock-market-graph-up-transparent-background.png"
+                                        alt="">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex mt-2 border-right">
+                                    <div class="box p-2 rounded">
+                                        <span class="text-primary px-1 font-weight-bold">03</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column">
+                                    <div class="text-muted">Name</div>
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <img src="https://freepngimg.com/thumb/bitcoin/59549-cryptocurrency-money-bitcoin-gold-cash-free-photo-png-thumb.png"
+                                                alt="" class="icons">
+                                        </div>
+                                        <b class="pl-2">Ripple</b>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column">
+                                    <div class="text-muted">Market cap</div>
+                                    <div><b>$56,169,768.00</b></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column">
+                                    <div class="text-muted">Price</div>
+                                    <div><b>$5,536.79</b></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column">
+                                    <div class="d-flex align-items-center labels">
+                                        <div class="text-muted">Volume</div>
+                                        <div class="green-label mx-1 px-1 rounded">74</div>
+                                    </div>
+                                    <div><b>$17,576,878.89</b></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column">
+                                    <div class="d-flex align-items-center labels">
+                                        <div class="text-muted">Change</div>
+                                        <div class="orange-label mx-1 px-1 rounded">20%</div>
+                                    </div>
+                                    <div><b class="green">+1.71%</b></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="graph">
+                                    <img src="https://freepngimg.com/thumb/stock_market/25650-5-stock-market-graph-up-transparent-background.png"
+                                        alt="" id="ripple">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="d-flex mt-2 border-right">
+                                    <div class="box p-2 rounded">
+                                        <span class="text-primary px-1 font-weight-bold">04</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column">
+                                    <div class="text-muted">Name</div>
+                                    <div class="d-flex align-items-center">
+                                        <div>
+                                            <img src="https://freepngimg.com/thumb/bitcoin/59842-cryptocurrency-bitfinex-bitcoin-exchange-png-download-free-thumb.png"
+                                                alt="" class="icons">
+                                        </div>
+                                        <b class="pl-2">EOS</b>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column">
+                                    <div class="text-muted">Market cap</div>
+                                    <div><b>$12,169,768.00</b></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column">
+                                    <div class="text-muted">Price</div>
+                                    <div><b>$14.79</b></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column">
+                                    <div class="d-flex align-items-center labels">
+                                        <div class="text-muted">Volume</div>
+                                        <div class="green-label mx-1 px-1 rounded">74</div>
+                                    </div>
+                                    <div><b>$76,878.89</b></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex flex-column">
+                                    <div class="d-flex align-items-center labels">
+                                        <div class="text-muted">Change</div>
+                                        <div class="orange-label mx-1 px-1 rounded">20%</div>
+                                    </div>
+                                    <div><b class="red">-5.86%</b></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="graph">
+                                    <img src="https://freepngimg.com/thumb/stock_market/25650-5-stock-market-graph-up-transparent-background.png"
+                                        alt="" id="eos">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center py-2">
+            <div>
+                <a href="#">Load more <span class="text-white">26</span></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- end booking -->
+    <!-- Footer Start -->
+<div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="row gx-5">
+            <div class="col-lg-2 col-md-12 pt-5 mb-3">
+                <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                    <h4 class="text-light mb-0"><a>Home</a></h4>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-12 pt-0 pt-lg-5 mb-3">
+                <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                    <h4 class="text-light mb-0"><a>Schedule</a></h4>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-3 ">
+                <div class="text-center section-title-sm position-relative">
+                    <a href="index.html" class="navbar-brand p-0">
+                        <h3 class="m-0"><i class="fa-solid fa-bus me-2"></i>Bus Station</h3>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-12 pt-0 pt-lg-5 mb-3">
+                <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                    <h4 class="text-light mb-0"><a>About</a></h4>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-12 pt-0 pt-lg-5 mb-3">
+                <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                    <h4 class="text-light mb-0"><a>Contact Us</a></h4>
+                </div>
+            </div>
+        </div>
+        <div class="row gx-5 ">
+            <div class="col-lg-2 col-md-12 pt-0 pt-lg-5 mb-3">
+                <div class=" section-title-sm position-relative pb-3 mb-4">
+                    <h4 class="text-light mb-0">Useful Links :</h4>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-12 pt-0 pt-lg-5 mb-3">
+                <div class=" section-title-sm position-relative pb-3 mb-4">
+                    <a href="">Link 1</a>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-12 pt-0 pt-lg-5 mb-3">
+                <div class=" section-title-sm position-relative pb-3 mb-4">
+                    <a href="">Link 2</a>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-12 pt-0 pt-lg-5 mb-3">
+                <div class=" section-title-sm position-relative pb-3 mb-4">
+                    <a href="">Link 3</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-3 d-flex flex-row-reverse">
+                <div class=" section-title-sm position-relative pb-3 mb-4 p-2">
+                    <h4 class="text-light mb-0">Follow Us :</h4>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-12 pt-0 pt-lg-5 mb-3 ">
+                <div class=" section-title-sm position-relative pb-3 mb-4 ">
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i
+                            class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i
+                            class="fab fa-instagram fw-normal"></i></a>
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i
+                            class="fab fa-linkedin-in fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid text-white" style="background: #061429;">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-6">
+                <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
+                    <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">Bus Station</a>. All
+                        Rights Reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/counterup/counterup.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+</body>
+
+</html>
