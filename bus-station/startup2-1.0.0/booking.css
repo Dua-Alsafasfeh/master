@@ -1,16 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 *{
-    padding: 0;
-    margin: 0;
+    /* padding: 0; */
+    /* margin: 0; */
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    font-size: 0.95rem;
+    /* font-size: 0.95rem; */
+
 }
 body{
     background-color: #f3f3f3;
+    /* font-size: 0.95rem; */
 }
 #starred{
     box-shadow: 3px 3px 10px #b5b5b5;
+}
+.table-row1{
+    background-color: #091E3E;
+    color: white;
 }
 .table div.text-muted{
     font-size: 0.85rem;
@@ -100,7 +106,7 @@ body{
 }
 .box{
     transform: scale(1.5);
-    background-color: #dbe2ff;
+    background-color: #091E3E;
 }
 #top .table tbody tr{
     border-bottom: 1px solid #ddd;
@@ -152,3 +158,11 @@ a:hover .text-white{
         margin-top: 10px;
     }
 }
+/* //////////////////////////////////seat booking ///////////////// */
+.cls-selected{background-color:green;}
+.cls-ra{background-color:#fff;}
+.cls-rb{background-color:gray;}
+.cls-fa{background-color:#fff; border: 2px solid pink !important;}
+.cls-fb{background-color:pink;}
+.cls-ma{background-color:#fff;border: 2px solid royalblue !important;}
+.cls-mb{background-color:royalblue;} 

@@ -29,8 +29,10 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
@@ -84,7 +86,8 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
             </button>
-            <div class="collapse navbar-collapse col-lg-7 mx-5 text-center text-lg-start d-flex justify-content-center" id="navbarCollapse">
+            <div class="collapse navbar-collapse col-lg-7 mx-5 text-center text-lg-start d-flex justify-content-center"
+                id="navbarCollapse">
                 <div class="navbar-nav ms-5 py-0 ">
                     <a href="index.html" class="nav-item nav-link ">Home</a>
                     <a href="schedule.html" class="nav-item nav-link">Schedule</a>
@@ -101,21 +104,21 @@
         </nav>
     </div>
 
-        <div class="container-fluid bg-primary py-5 bg-header">
-            <div class="row py-5">
-                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-                    <h1 class="display-4 text-white animated zoomIn">Booking</h1>
-                    <a href="" class="h5 text-white">Home</a>
-                    <i class="far fa-circle text-white px-2"></i>
-                    <a href="" class="h5 text-white">Booking</a>
-                </div>
+    <div class="container-fluid bg-primary py-5 bg-header">
+        <div class="row py-5">
+            <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+                <h1 class="display-4 text-white animated zoomIn">Booking</h1>
+                <a href="" class="h5 text-white">Home</a>
+                <i class="far fa-circle text-white px-2"></i>
+                <a href="" class="h5 text-white">Booking</a>
             </div>
         </div>
+    </div>
     <!-- Navbar End -->
 
     <!-- start booking -->
     <div class="container mt-5">
-        <div class="h3 text-muted">My Favorite</div>
+        <div class="h3 text-muted">Seat Booking</div>
         <div id="starred" class="bg-white px-2 pt-1 mt-2">
             <div class="table-responsive">
                 <table class="table">
@@ -124,7 +127,7 @@
                             <td>
                                 <div class="d-flex mt-2 border-right">
                                     <div class="box p-2 rounded">
-                                        <span class="fas fa-star text-primary px-1"></span>
+                                        <i class="fa-solid fa-bus text-white "></i>
                                     </div>
                                 </div>
                             </td>
@@ -172,360 +175,308 @@
         <div class="d-lg-flex align-items-lg-center py-4">
             <div class="h3 text-muted">From:</div>
             <div class="ml-auto">
-                <strong>--------</strong> 
+                <strong>--------</strong>
             </div>
             &nbsp;&nbsp;&nbsp;
             <div class="h3 text-muted">To:</div>
             <div class="ml-auto">
-                <strong>--------</strong> 
+                <strong>--------</strong>
             </div>
         </div>
         <div id="top">
             <div class="bg-white table-responsive">
-                <table class="table">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="table-row1">
+                            <th scope="col">Time</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Available Seats</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
                     <tbody>
                         <tr>
-                            <td>
-                                <div class="d-flex mt-2 border-right">
-                                    <div class="box p-2 rounded">
-                                        <span class="text-primary px-2 font-weight-bold">01</span>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex flex-column">
-                                    <div class="text-muted">Name</div>
-                                    <div class="d-flex align-items-center">
-                                        <div>
-                                            <img src="https://freepngimg.com/thumb/bitcoin/59703-classic-bitcoin-virtual-cryptocurrency-currency-ethereum.png"
-                                                alt="" class="icons">
-                                        </div>
-                                        <b class="pl-2">Ethereum</b>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex flex-column">
-                                    <div class="text-muted">Market cap</div>
-                                    <div><b>$146,169,768.00</b></div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex flex-column">
-                                    <div class="text-muted">Price</div>
-                                    <div><b>$8,536.79</b></div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex flex-column">
-                                    <div class="d-flex align-items-center labels">
-                                        <div class="text-muted">Volume</div>
-                                        <div class="green-label mx-1 px-1 rounded">74</div>
-                                    </div>
-                                    <div><b>$7,576,878.89</b></div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex flex-column">
-                                    <div class="d-flex align-items-center labels">
-                                        <div class="text-muted">Change</div>
-                                        <div class="orange-label mx-1 px-1 rounded">20%</div>
-                                    </div>
-                                    <div><b class="red">-0.18%</b></div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="graph">
-                                    <img src="https://freepngimg.com/thumb/stock_market/25650-5-stock-market-graph-up-transparent-background.png"
-                                        alt="" id="ethereum">
-                                </div>
-                            </td>
+                            <th scope="row">15:15 - 20:15</th>
+                            <td>5 JD</td>
+                            <td>12</td>
+                            <td><button type="button" class="btn btn-outline-primary">Choose</button></td>
                         </tr>
                         <tr>
-                            <td>
-                                <div class="d-flex mt-2 border-right">
-                                    <div class="box p-2 rounded">
-                                        <span class="text-primary px-1 font-weight-bold">02</span>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex flex-column">
-                                    <div class="text-muted">Name</div>
-                                    <div class="d-flex align-items-center">
-                                        <div>
-                                            <img src="https://freepngimg.com/thumb/bitcoin/59526-cryptocurrency-badge-bitcoin-gold-png-file-hd-thumb.png"
-                                                alt="" class="icons">
-                                        </div>
-                                        <b class="pl-2">Bitcoin cash</b>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex flex-column">
-                                    <div class="text-muted">Market cap</div>
-                                    <div><b>$446,569,768.00</b></div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex flex-column">
-                                    <div class="text-muted">Price</div>
-                                    <div><b>$8,836.79</b></div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex flex-column">
-                                    <div class="d-flex align-items-center labels">
-                                        <div class="text-muted">Volume</div>
-                                        <div class="green-label mx-1 px-1 rounded">74</div>
-                                    </div>
-                                    <div><b>$7,576,878.89</b></div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex flex-column">
-                                    <div class="d-flex align-items-center labels">
-                                        <div class="text-muted">Change</div>
-                                        <div class="orange-label mx-1 px-1 rounded">20%</div>
-                                    </div>
-                                    <div><b class="green">+4.00%</b></div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="graph">
-                                    <img src="https://freepngimg.com/thumb/stock_market/25650-5-stock-market-graph-up-transparent-background.png"
-                                        alt="">
-                                </div>
-                            </td>
+                            <th scope="row">15:15 - 20:15</th>
+                            <td>5 JD</td>
+                            <td>12</td>
+                            <td><button type="button" class="btn btn-outline-primary">Choose</button></td>
                         </tr>
                         <tr>
-                            <td>
-                                <div class="d-flex mt-2 border-right">
-                                    <div class="box p-2 rounded">
-                                        <span class="text-primary px-1 font-weight-bold">03</span>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex flex-column">
-                                    <div class="text-muted">Name</div>
-                                    <div class="d-flex align-items-center">
-                                        <div>
-                                            <img src="https://freepngimg.com/thumb/bitcoin/59549-cryptocurrency-money-bitcoin-gold-cash-free-photo-png-thumb.png"
-                                                alt="" class="icons">
-                                        </div>
-                                        <b class="pl-2">Ripple</b>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex flex-column">
-                                    <div class="text-muted">Market cap</div>
-                                    <div><b>$56,169,768.00</b></div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex flex-column">
-                                    <div class="text-muted">Price</div>
-                                    <div><b>$5,536.79</b></div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex flex-column">
-                                    <div class="d-flex align-items-center labels">
-                                        <div class="text-muted">Volume</div>
-                                        <div class="green-label mx-1 px-1 rounded">74</div>
-                                    </div>
-                                    <div><b>$17,576,878.89</b></div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex flex-column">
-                                    <div class="d-flex align-items-center labels">
-                                        <div class="text-muted">Change</div>
-                                        <div class="orange-label mx-1 px-1 rounded">20%</div>
-                                    </div>
-                                    <div><b class="green">+1.71%</b></div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="graph">
-                                    <img src="https://freepngimg.com/thumb/stock_market/25650-5-stock-market-graph-up-transparent-background.png"
-                                        alt="" id="ripple">
-                                </div>
-                            </td>
+                            <th scope="row">15:15 - 20:15</th>
+                            <td>5 JD</td>
+                            <td>12</td>
+                            <td><button type="button" class="btn btn-outline-primary">Choose</button></td>
                         </tr>
-                        <tr>
-                            <td>
-                                <div class="d-flex mt-2 border-right">
-                                    <div class="box p-2 rounded">
-                                        <span class="text-primary px-1 font-weight-bold">04</span>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex flex-column">
-                                    <div class="text-muted">Name</div>
-                                    <div class="d-flex align-items-center">
-                                        <div>
-                                            <img src="https://freepngimg.com/thumb/bitcoin/59842-cryptocurrency-bitfinex-bitcoin-exchange-png-download-free-thumb.png"
-                                                alt="" class="icons">
-                                        </div>
-                                        <b class="pl-2">EOS</b>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex flex-column">
-                                    <div class="text-muted">Market cap</div>
-                                    <div><b>$12,169,768.00</b></div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex flex-column">
-                                    <div class="text-muted">Price</div>
-                                    <div><b>$14.79</b></div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex flex-column">
-                                    <div class="d-flex align-items-center labels">
-                                        <div class="text-muted">Volume</div>
-                                        <div class="green-label mx-1 px-1 rounded">74</div>
-                                    </div>
-                                    <div><b>$76,878.89</b></div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex flex-column">
-                                    <div class="d-flex align-items-center labels">
-                                        <div class="text-muted">Change</div>
-                                        <div class="orange-label mx-1 px-1 rounded">20%</div>
-                                    </div>
-                                    <div><b class="red">-5.86%</b></div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="graph">
-                                    <img src="https://freepngimg.com/thumb/stock_market/25650-5-stock-market-graph-up-transparent-background.png"
-                                        alt="" id="eos">
-                                </div>
-                            </td>
-                        </tr>
+
                     </tbody>
                 </table>
             </div>
         </div>
-        <div class="d-flex justify-content-center py-2">
-            <div>
-                <a href="#">Load more <span class="text-white">26</span></a>
-            </div>
-        </div>
     </div>
-
     <!-- end booking -->
+
+    <!-- start seat booking -->
+    <div class="seatshow">
+        <div id="app">
+            <div class="container">
+              <div class="row">
+                <div class="col-8 py-5">
+                  <div>
+                    <table class="mx-auto">
+                      <tbody>
+                        <tr v-for="idxr, r in rows">
+                          <td v-for="idxc, c in cols" class="pl-2" style="width: 50px;">
+                            <div onclick="onSeatSelected(idxr, idxc)" v-if="!isAisle(idxr, idxc)" :class="classifier(idxr, idxc)" style="width: 30px; height: 30px; border: 1px solid black;"></div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-4 pt-3">
+                  <div class="card" v-show="selectedSeat !=null" style="display: none;">
+                    <div class="card-header">Properties</div>
+                    <div class="card-body">
+                      <ul class="list-group">
+                        <li onclick="changeSeatStatus('RA')" class="list-group-item" :class="seatStatus('RA')">
+                          <div class="float-left bg-white" style="width: 25px;"><div class="cls-ra" style="width: 30px; height: 30px; border: 1px solid black;"></div></div>
+                          <span class="px-3">Available</span>
+                        </li>
+                        <li onclick="changeSeatStatus('RB')" class="list-group-item" :class="seatStatus('RB')">
+                          <div class="float-left" style="width: 25px;"><div class="cls-rb" style="width: 30px; height: 30px; border: 1px solid black;"></div></div>
+                          <span class="px-3">Booked</span>
+                        </li>
+                        <li onclick="changeSeatStatus('FA')" class="list-group-item" :class="seatStatus('FA')">
+                          <div class="float-left" style="width: 25px;"><div class="cls-fa" style="width: 30px; height: 30px; border: 1px solid black;"></div></div>
+                          <span class="px-3">Reserve for Female</span>
+                        </li>
+                        <li onclick="changeSeatStatus('FB')" class="list-group-item" :class="seatStatus('FB')">
+                          <div class="float-left" style="width: 25px;"><div class="cls-fb" style="width: 30px; height: 30px; border: 1px solid black;"></div></div>
+                          <span class="px-3">Reserve for Female - Booked</span>
+                        </li>
+                        <li onclick="changeSeatStatus('MA')" class="list-group-item" :class="seatStatus('MA')">
+                          <div class="float-left" style="width: 25px;"><div class="cls-ma" style="width: 30px; height: 30px; border: 1px solid black;"></div></div>
+                          <span class="px-3">Reserve for Male</span>
+                        </li>
+                        <li onclick="changeSeatStatus('MB')" class="list-group-item" :class="seatStatus('MB')">
+                          <div class="float-left" style="width: 25px;"><div class="cls-mb" style="width: 30px; height: 30px; border: 1px solid black;"></div></div>
+                          <span class="px-3">Reserve for Male - Booked</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <!-- end seat booking -->
     <!-- Footer Start -->
-<div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
-    <div class="container">
-        <div class="row gx-5">
-            <div class="col-lg-2 col-md-12 pt-5 mb-3">
-                <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                    <h4 class="text-light mb-0"><a>Home</a></h4>
+    <div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-2 col-md-12 pt-5 mb-3">
+                    <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                        <h4 class="text-light mb-0"><a>Home</a></h4>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-12 pt-0 pt-lg-5 mb-3">
+                    <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                        <h4 class="text-light mb-0"><a>Schedule</a></h4>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-3 ">
+                    <div class="text-center section-title-sm position-relative">
+                        <a href="index.html" class="navbar-brand p-0">
+                            <h3 class="m-0"><i class="fa-solid fa-bus me-2"></i>Bus Station</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-12 pt-0 pt-lg-5 mb-3">
+                    <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                        <h4 class="text-light mb-0"><a>About</a></h4>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-12 pt-0 pt-lg-5 mb-3">
+                    <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                        <h4 class="text-light mb-0"><a>Contact Us</a></h4>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-12 pt-0 pt-lg-5 mb-3">
-                <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                    <h4 class="text-light mb-0"><a>Schedule</a></h4>
+            <div class="row gx-5 ">
+                <div class="col-lg-2 col-md-12 pt-0 pt-lg-5 mb-3">
+                    <div class=" section-title-sm position-relative pb-3 mb-4">
+                        <h4 class="text-light mb-0">Useful Links :</h4>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-3 ">
-                <div class="text-center section-title-sm position-relative">
-                    <a href="index.html" class="navbar-brand p-0">
-                        <h3 class="m-0"><i class="fa-solid fa-bus me-2"></i>Bus Station</h3>
-                    </a>
+                <div class="col-lg-1 col-md-12 pt-0 pt-lg-5 mb-3">
+                    <div class=" section-title-sm position-relative pb-3 mb-4">
+                        <a href="">Link 1</a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-2 col-md-12 pt-0 pt-lg-5 mb-3">
-                <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                    <h4 class="text-light mb-0"><a>About</a></h4>
+                <div class="col-lg-1 col-md-12 pt-0 pt-lg-5 mb-3">
+                    <div class=" section-title-sm position-relative pb-3 mb-4">
+                        <a href="">Link 2</a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-2 col-md-12 pt-0 pt-lg-5 mb-3">
-                <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                    <h4 class="text-light mb-0"><a>Contact Us</a></h4>
+                <div class="col-lg-1 col-md-12 pt-0 pt-lg-5 mb-3">
+                    <div class=" section-title-sm position-relative pb-3 mb-4">
+                        <a href="">Link 3</a>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="row gx-5 ">
-            <div class="col-lg-2 col-md-12 pt-0 pt-lg-5 mb-3">
-                <div class=" section-title-sm position-relative pb-3 mb-4">
-                    <h4 class="text-light mb-0">Useful Links :</h4>
+                <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-3 d-flex flex-row-reverse">
+                    <div class=" section-title-sm position-relative pb-3 mb-4 p-2">
+                        <h4 class="text-light mb-0">Follow Us :</h4>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-1 col-md-12 pt-0 pt-lg-5 mb-3">
-                <div class=" section-title-sm position-relative pb-3 mb-4">
-                    <a href="">Link 1</a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-12 pt-0 pt-lg-5 mb-3">
-                <div class=" section-title-sm position-relative pb-3 mb-4">
-                    <a href="">Link 2</a>
-                </div>
-            </div>
-            <div class="col-lg-1 col-md-12 pt-0 pt-lg-5 mb-3">
-                <div class=" section-title-sm position-relative pb-3 mb-4">
-                    <a href="">Link 3</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-3 d-flex flex-row-reverse">
-                <div class=" section-title-sm position-relative pb-3 mb-4 p-2">
-                    <h4 class="text-light mb-0">Follow Us :</h4>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-12 pt-0 pt-lg-5 mb-3 ">
-                <div class=" section-title-sm position-relative pb-3 mb-4 ">
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i
-                            class="fab fa-facebook-f fw-normal"></i></a>
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i
-                            class="fab fa-instagram fw-normal"></i></a>
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i
-                            class="fab fa-linkedin-in fw-normal"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container-fluid text-white" style="background: #061429;">
-    <div class="container text-center">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 col-md-6">
-                <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
-                    <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">Bus Station</a>. All
-                        Rights Reserved.
-                    </p>
+                <div class="col-lg-2 col-md-12 pt-0 pt-lg-5 mb-3 ">
+                    <div class=" section-title-sm position-relative pb-3 mb-4 ">
+                        <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i
+                                class="fab fa-facebook-f fw-normal"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i
+                                class="fab fa-instagram fw-normal"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i
+                                class="fab fa-linkedin-in fw-normal"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Footer End -->
+    <div class="container-fluid text-white" style="background: #061429;">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-6">
+                    <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
+                        <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">Bus Station</a>. All
+                            Rights Reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
 
 
-<!-- Back to Top -->
-<a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
-<!-- JavaScript Libraries -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="lib/wow/wow.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/counterup/counterup.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-<!-- Template Javascript -->
-<script src="js/main.js"></script>
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    
 </body>
-
+<script>
+        var sharedEvents = new Vue();
+var app = new Vue({
+  el: "#app",
+  data: {
+    errors: [],
+    o: [],
+    selectedSeat: null,
+    rows: 5,
+    cols: 12,
+    seats: [],
+  },
+  computed: {},
+  methods: {
+    getSeat(r, c) {
+      for (i = 0; i < this.seats.length; ++i) {
+        if (this.seats[i].position.r == r && this.seats[i].position.c == c) {
+          return this.seats[i];
+        }
+      }
+      return null;
+    },
+    generateSeats() {
+      for (y = 1; y <= this.rows; ++y) {
+        for (x = 1; x <= this.cols; ++x) {
+          if (!this.isAisle(y, x)) {
+            this.seats.push({
+              position: { r: y, c: x },
+              status: "RA",
+            });
+          }
+        }
+      }
+    },
+    classifier(r, c) {
+      let seat = this.getSeat(r, c);
+      if (seat != null) {
+        if (this.selectedSeat != seat) {
+          switch (seat.status) {
+            case "RA":
+              return "cls-ra";
+            case "RB":
+              return "cls-rb";
+            case "FA":
+              return "cls-fa";
+            case "FB":
+              return "cls-fb";
+            case "MA":
+              return "cls-ma";
+            case "MB":
+              return "cls-mb";
+            default:
+              return "cls-ra";
+          }
+        } else {
+          return "cls-selected";
+        }
+      }
+    },
+    isAisle(r, c) {
+      if (r == 3) {
+        if (c >= 1 && c <= 11) {
+          return true;
+        }
+      }
+      return false;
+    },
+    onSeatSelected(r, c) {
+      if (this.selectedSeat == this.getSeat(r, c)) {
+        this.selectedSeat = null;
+      } else {
+        this.selectedSeat = this.getSeat(r, c);
+      }
+    },
+    seatStatus(status) {
+      if (this.selectedSeat != null) {
+        if (this.selectedSeat.status == status) return "active";
+      }
+      return "";
+    },
+    changeSeatStatus(status) {
+      if (this.selectedSeat != null) {
+        for (i = 0; i < this.seats.length; ++i) {
+          if (this.seats[i].position.r == this.selectedSeat.position.r && this.seats[i].position.c == this.selectedSeat.position.c) {
+            this.seats[i].status = status;
+            this.selectedSeat = null;
+            break;
+          }
+        }
+      }
+    },
+  },
+  beforeMount() {},
+  mounted() {
+    this.generateSeats();
+  },
+});
+    </script>
 </html>
