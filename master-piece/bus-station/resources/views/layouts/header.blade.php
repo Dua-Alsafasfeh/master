@@ -28,10 +28,10 @@
     <link href="lib/animate/animate.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
 <body>
@@ -83,17 +83,17 @@
             </button>
             <div class="collapse navbar-collapse col-lg-7 mx-5 text-center text-lg-start d-flex justify-content-center" id="navbarCollapse">
                 <div class="navbar-nav ms-5 py-0 ">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="schedule.html" class="nav-item nav-link">Schedule</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="contact.html" class="nav-item nav-link">Contact Us</a>
-                    <a href="gallery.html" class="nav-item nav-link">Gallery</a>
+                    <a href="/Home" class="nav-item nav-link active">Home</a>
+                    <a href="/Schedule" class="nav-item nav-link">Schedule</a>
+                    <a href="/About" class="nav-item nav-link">About</a>
+                    <a href="/Contact" class="nav-item nav-link">Contact Us</a>
+                    <a href="/Gallery" class="nav-item nav-link">Gallery</a>
                 </div>
 
             </div>
             <div class="navbar-nav ms-auto py-0 col-lg-3 text-center text-lg-end">
-                <a href="register.html" class="nav-link ">Register</a>
-                <a href="login.html" class="nav-link ">Login</a>
+                <a href="/Register" class="nav-link ">Register</a>
+                <a href="/Login" class="nav-link ">Login</a>
             </div>
         </nav>
     </div>

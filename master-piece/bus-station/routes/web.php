@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('userside.home');
+});
+
+Route::controller(HomeController::class)->group(function ()
+{
+    Route::get('/Home', 'viewHome');
+    Route::get('/Schedule', 'viewSchedule');
+    Route::get('/About', 'viewAbout');
+    Route::get('/Contact', 'viewContact');
+    Route::get('/Gallery', 'viewGallery');
+    Route::get('/Register', 'viewRegister');
+    Route::get('/Login', 'viewLogin');
 });
