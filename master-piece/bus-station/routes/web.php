@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BusStationController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,7 @@ Route::get('/', function () {
     return view('userside.home');
 });
 
-Route::controller(HomeController::class)->group(function ()
+Route::controller(BusStationController::class)->group(function ()
 {
     Route::get('/Home', 'viewHome');
     Route::get('/Schedule', 'viewSchedule');
@@ -28,3 +29,6 @@ Route::controller(HomeController::class)->group(function ()
     Route::get('/Register', 'viewRegister');
     Route::get('/Login', 'viewLogin');
 });
+
+
+
