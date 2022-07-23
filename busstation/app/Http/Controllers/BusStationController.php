@@ -22,10 +22,10 @@ class BusStationController extends Controller
         return view('userside.gallery');
     }
     public function viewRegister(){
-        return view('userside.register');
+        return view('auth.register');
     }
     public function viewLogin(){
-        return view('userside.login');
+        return view('auth.login');
     }
 
 }
