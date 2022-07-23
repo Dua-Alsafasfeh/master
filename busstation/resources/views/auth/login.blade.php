@@ -19,7 +19,7 @@ Login
 
 <!-- start login -->
 <div class="login-form">
-<form method="get" action="{{ route('login') }}">
+<form method="post" action="{{ route('login') }}">
     @csrf
     <div class="avatar">
         <img src="https://s3.amazonaws.com/branch.qlik.com/attachments/5ada5a8f0c313f5c539dc7fd/image.png" alt="Avatar">

@@ -18,7 +18,7 @@ Register
 <!-- Navbar End -->
 <!-- start register -->
 <div class="signup-form">
-<form method="get" action="{{ route('register') }}">
+<form method="post" action="{{ route('register') }}">
     @csrf
 <h2>Register</h2>
 <p class="hint-text">Create your account. It's free and only takes a minute.</p>

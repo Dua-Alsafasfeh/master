@@ -27,5 +27,9 @@ class BusStationController extends Controller
     public function viewLogin(){
         return view('auth.login');
     }
+    public function viewBooking(){
+        return view('userside.booking');
+    }
+    
 
 }

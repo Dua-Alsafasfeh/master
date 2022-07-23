@@ -31,6 +31,7 @@ Route::controller(BusStationController::class)->group(function ()
     Route::get('/Gallery', 'viewGallery');
     Route::get('/Register', 'viewRegister');
     Route::get('/Login', 'viewLogin');
+    Route::get('/Booking', 'viewBooking');
 });
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
