@@ -4,29 +4,29 @@
         <div class="row gx-5">
             <div class="col-lg-2 col-md-12 pt-5 mb-3">
                 <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                    <h4 class="text-light mb-0"><a>Home</a></h4>
+                    <h4 class="text-light mb-0"><a href="/home">Home</a></h4>
                 </div>
             </div>
             <div class="col-lg-2 col-md-12 pt-0 pt-lg-5 mb-3">
                 <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                    <h4 class="text-light mb-0"><a>Schedule</a></h4>
+                    <h4 class="text-light mb-0"><a href="/schedule">Schedule</a></h4>
                 </div>
             </div>
             <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-3 ">
                 <div class="text-center section-title-sm position-relative">
-                    <a href="index.html" class="navbar-brand p-0">
+                    <a href="/home" class="navbar-brand p-0">
                         <h3 class="m-0"><i class="fa-solid fa-bus me-2"></i>Bus Station</h3>
                     </a>
                 </div>
             </div>
             <div class="col-lg-2 col-md-12 pt-0 pt-lg-5 mb-3">
                 <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                    <h4 class="text-light mb-0"><a>About</a></h4>
+                    <h4 class="text-light mb-0"><a href="/about">About</a></h4>
                 </div>
             </div>
             <div class="col-lg-2 col-md-12 pt-0 pt-lg-5 mb-3">
                 <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                    <h4 class="text-light mb-0"><a>Contact Us</a></h4>
+                    <h4 class="text-light mb-0"><a href="/contact">Contact Us</a></h4>
                 </div>
             </div>
         </div>
@@ -74,7 +74,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-8 col-md-6">
                 <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
-                    <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">Bus Station</a>. All
+                    <p class="mb-0">&copy; <a class="text-white border-bottom" href="/home">Bus Station</a>. All
                         Rights Reserved.
                     </p>
                 </div>

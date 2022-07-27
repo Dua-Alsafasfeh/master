@@ -83,7 +83,7 @@ Register
     {{-- <input type="number" class="form-control" name="mobile" placeholder="Mobile Number" required="required"> --}}
     <div class="col-md-12">
         <label for="phone" class="col-md col-form-label text-md-end">{{ __('Phone Number') }}</label>
-            <input id="phone" type="tel" class="form-control rounded form-control-md " name="phone" value="{{ old('phone') }}" required autocomplete="phone">
+            <input id="phone" type="tel" class="form-control @error('phone') is-invalid @enderror rounded form-control-md"  name="phone" value="{{ old('phone') }}" required autocomplete="phone">
             @error('phone')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>

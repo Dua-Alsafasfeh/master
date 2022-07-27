@@ -24,15 +24,15 @@ Route::get('/', function () {
 
 Route::controller(BusStationController::class)->group(function ()
 {
-    Route::get('/Home', 'viewHome');
-    Route::get('/Schedule', 'viewSchedule');
-    Route::get('/About', 'viewAbout');
-    Route::get('/Contact', 'viewContact');
-    Route::get('/Gallery', 'viewGallery');
-    Route::get('/Register', 'viewRegister');
-    Route::get('/Login', 'viewLogin');
-    Route::get('/Booking', 'viewBooking');
+    Route::get('/home', 'viewHome');
+    Route::get('/schedule', 'viewSchedule');
+    Route::get('/about', 'viewAbout')->name('about');
+    Route::get('/contact', 'viewContact');
+    Route::get('/gallery', 'viewGallery');
+    // Route::get('/Register', 'viewRegister');
+    // Route::get('/Login', 'viewLogin');
+    Route::get('/booking', 'viewBooking');
 });
 Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/profile', [App\Http\Controllers\HomeController::class, 'index'])->name('profile');
 

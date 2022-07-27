@@ -30,6 +30,4 @@ class BusStationController extends Controller
     public function viewBooking(){
         return view('userside.booking');
     }
-    
-
 }

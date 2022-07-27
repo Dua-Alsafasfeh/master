@@ -6,7 +6,7 @@ Home
 
 @section('content')
 
-<div class="container">
+{{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -24,9 +24,7 @@ Home
             </div>
         </div>
     </div>
-</div>
-
-
+</div> --}}
 <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
@@ -138,7 +136,7 @@ Home
                             <div class="book_tabel_item">
                                 <div class="form-group">
                                     <div class='input-group date' id='datetimepicker11'>
-                                        <h5 class="mx-4 mt-4"><a class="book_now_btn button_hover" href="{{url('/Booking') }}">Book Now</a></h5>
+                                        <h5 class="mx-4 mt-4"><a class="book_now_btn button_hover" href="{{url('/booking') }}">Book Now</a></h5>
                                     </div>
                                 </div>
                             </div>
