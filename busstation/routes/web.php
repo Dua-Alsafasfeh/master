@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BusStationController;
+use App\Http\Controllers\scheduleController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -35,4 +36,23 @@ Route::controller(BusStationController::class)->group(function ()
 });
 Auth::routes();
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'index'])->name('profile');
+Route::get('/schedule',[scheduleController::class,'index']);
 
+
+
+
+
+
+Route::namespace('Admin')
+    ->prefix('admin')
+    ->name('admin.')
+    ->middleware(['auth', 'verified', 'admin'])
+    ->group(function () {
+        Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+        Route::resource('locations', 'LocationController')->except(['show']);
+        Route::resource('buses', 'BusController')->except(['show']);
+        Route::resource('routes', 'RouteController');
+        Route::resource('rides', 'RideController');
+        Route::resource('bookings', 'BookingController')->except(['show', 'create', 'store']);
+        Route::resource('users', 'UserController')->except(['show']);
+    });

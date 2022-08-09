@@ -1,8 +1,13 @@
 @extends('layouts.master')
 {{-- @extends('layouts.app') --}}
 @section('title')
-Home
+profile
 @endsection
+
+@section('profile')
+ active 
+@endsection
+
 
 @section('content')
 <div class="container-fluid wow fadeInUp" data-wow-delay="0.1s" style="margin-top: 7%">

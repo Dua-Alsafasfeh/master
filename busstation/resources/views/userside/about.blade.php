@@ -3,6 +3,10 @@
 About us
 @endsection
 
+@section('about')
+ active 
+@endsection
+
 @section('content')
 <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
     <div class="row py-5">

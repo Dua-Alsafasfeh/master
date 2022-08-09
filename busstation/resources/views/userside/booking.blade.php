@@ -218,7 +218,7 @@
 <!-- end booking -->
 
 <!-- start seat booking -->
-<div class="seatshow">
+{{-- <div class="seatshow">
     <div id="app">
         <div class="container">
           <div class="row">
@@ -271,7 +271,7 @@
           </div>
         </div>
       </div>
-</div>
+</div> --}}
 <!-- end seat booking -->
 
 <!-- Footer Start -->

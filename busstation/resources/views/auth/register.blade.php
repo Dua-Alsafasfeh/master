@@ -4,6 +4,10 @@
 Register
 @endsection
 
+@section('register')
+ active 
+@endsection
+
 @section('content')
 <div class="container-fluid bg-primary py-5 bg-header">
     <div class="row py-5">

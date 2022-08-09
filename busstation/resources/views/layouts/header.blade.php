@@ -83,11 +83,11 @@
             </button>
             <div class="collapse navbar-collapse col-lg-7 mx-5 text-center text-lg-start d-flex justify-content-center" id="navbarCollapse">
                 <div class="navbar-nav ms-5 py-0 ">
-                    <a href="/home" class="nav-item nav-link active">Home</a>
-                    <a href="/schedule" class="nav-item nav-link">Schedule</a>
-                    <a href="{{ route('about')}}" class="nav-item nav-link">About</a>
-                    <a href="/contact" class="nav-item nav-link">Contact Us</a>
-                    <a href="/gallery" class="nav-item nav-link">Gallery</a>
+                    <a href="/home" class="nav-item nav-link @yield('home')">Home</a>
+                    <a href="/schedule" class="nav-item nav-link @yield('schedule')">Schedule</a>
+                    <a href="{{ route('about')}}" class="nav-item nav-link @yield('about')">About</a>
+                    <a href="/contact" class="nav-item nav-link @yield('contact')">Contact Us</a>
+                    <a href="/gallery" class="nav-item nav-link @yield('gallery')">Gallery</a>
                 </div>
 
             </div>
@@ -96,18 +96,18 @@
                 @guest
                 @if (Route::has('login'))
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Login</a>
+                        <a class="nav-link @yield('login')" href="{{ route('login') }}">Login</a>
                     </li>
                 @endif
 
                 @if (Route::has('register'))
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">Register</a>
+                        <a class="nav-link @yield('register')" href="{{ route('register') }}">Register</a>
                     </li>
                 @endif
                 @else
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">{{ Auth::user()->name }}</a>
+                    <a class="nav-link @yield('profile')" href="{{ route('login') }}">{{ Auth::user()->name }}</a>
                     
                 </li>
                 <li class="nav-item">

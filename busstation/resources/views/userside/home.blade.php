@@ -4,6 +4,10 @@
 Home
 @endsection
 
+@section('home')
+ active 
+@endsection
+
 @section('content')
 
 {{-- <div class="container">
@@ -71,10 +75,12 @@ Home
 <div class="container-fluid py-4 wow fadeInUp" data-wow-delay="0.1s">
 <div class="hotel_booking_area position">
     <div class="container-fluid">
+        <form action="" method="GET">
         <div class="seat_booking_table">
             <div class="col-md-3">
                 <h2 class="text-white">Book Your Seat</h2>
-            </div>
+            </div> 
+            
             <div class="col-md-9">
                 <div class="boking_table">
                     <div class="row pb-4">
@@ -94,9 +100,6 @@ Home
                                                     <option value="4">Maan</option>
                                                     <option value="5">Al Tafila</option>
                                                     <option value="6">Al karak</option>
-                                                    <option value="7">Al salt</option>
-                                                    <option value="8">Jarash</option>
-                                                    <option value="9">Ajloun</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -121,9 +124,6 @@ Home
                                                     <option value="4">Maan</option>
                                                     <option value="5">Al Tafila</option>
                                                     <option value="6">Al karak</option>
-                                                    <option value="7">Al salt</option>
-                                                    <option value="8">Jarash</option>
-                                                    <option value="9">Ajloun</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -145,6 +145,7 @@ Home
                 </div>
             </div>
         </div>
+    </form>
     </div>
 </div>
 </div>
