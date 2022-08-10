@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRidesTable extends Migration
+class CreateTripBookingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateRidesTable extends Migration
      */
     public function up()
     {
-        Schema::create('rides', function (Blueprint $table) {
+        Schema::create('trip_bookings', function (Blueprint $table) {
             $table->id();
-            $table->foreign('bus_id')->references('id')->on('buses');
-            $table->foreign('route_id')->references('id')->on('routes');
-            $table->time('departure_time');
-            $table->date('ride_date')->nullable();
+            $table->foreignId("trip_id")->constrained()->onDelete("cascade");
+            $table->foreignId("user_id")->constrained()->onDelete("cascade");
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateRidesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rides');
+        Schema::dropIfExists('trip_bookings');
     }
 }
