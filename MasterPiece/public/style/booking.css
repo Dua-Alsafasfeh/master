@@ -75,7 +75,7 @@ body{
 
 /* utility classes */
 .table tr td{
-    border: none;
+    /* border: none; */
 }
 .red{
     color: #ff2f2f;
@@ -112,7 +112,7 @@ body{
     border-bottom: 1px solid #ddd;
 }
 #top .table tbody tr:last-child{
-    border: none;
+    /* border: none; */
 }
 select{
     background-color: inherit;

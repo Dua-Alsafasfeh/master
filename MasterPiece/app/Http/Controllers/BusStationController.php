@@ -55,5 +55,10 @@ class BusStationController extends Controller
         }
         
         return back();
+
+    }
+    
+    public function viewTicket(){
+        return view('userside.ticket');
     }
 }

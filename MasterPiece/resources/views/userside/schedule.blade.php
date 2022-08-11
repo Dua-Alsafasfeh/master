@@ -47,7 +47,7 @@ Schedule
 <div class="container">
 <table class="table table-striped table-bordered table-md table-wrapper-scroll-y my-custom-scrollbar" cellspacing="0" width="100%">
 <thead>
-  <tr class="tr-bg">
+  <tr class="tr-bg" scope="row">
     <th class="th-sm">Trip
     </th>
     <th class="th-sm">Days
@@ -64,13 +64,13 @@ Schedule
 </thead>
 <tbody>
   @foreach ($schedule as $item )
-  <tr>
-    <td>{{$item->from_id}}</td>
-    <td>{{$item->to_id}}</td>
-    <td>{{$item->trip_schedule}}</td>
-    <td>{{$item->price}}</td>
-    <td>{{$item->path}}</td>
-    <td>{{$item->num_seats}}</td>
+  <tr scope="row">
+    <td class="">{{$item->from_id}}</td>
+    <td >{{$item->to_id}}</td>
+    <td >{{$item->trip_schedule}}</td>
+    <td >{{$item->price}}</td>
+    <td >{{$item->path}}</td>
+    <td >{{$item->num_seats}}</td>
   </tr>
 @endforeach
 </tbody>

@@ -129,7 +129,7 @@ Home
                             <div class="book_tabel_item">
                                 <div class="form-group">
                                     <div class='input-group date' id='datetimepicker11'>
-                                        <button type="submit" class="mx-4 mt-4"><a class="book_now_btn button_hover">Book Now</a></h5>
+                                        <button type="submit" class="mx-4 mt-4 book_now_btn button_hover">Book Now</button>
                                     </div>
                                 </div>
                             </div>

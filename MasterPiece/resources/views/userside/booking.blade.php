@@ -77,7 +77,7 @@
     <!-- Navbar & Carousel Start -->
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
-            <a href="index.html" class="navbar-brand p-0">
+            <a href="/" class="navbar-brand p-0">
                 <h1 class="m-0"><i class="fa-solid fa-bus me-2"></i>Bus Station</h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -85,7 +85,7 @@
             </button>
             <div class="collapse navbar-collapse col-lg-7 mx-5 text-center text-lg-start d-flex justify-content-center" id="navbarCollapse">
                 <div class="navbar-nav ms-5 py-0 ">
-                    <a href="/home" class="nav-item nav-link active">Home</a>
+                    <a href="/" class="nav-item nav-link active">Home</a>
                     <a href="/schedule" class="nav-item nav-link">Schedule</a>
                     <a href="/about" class="nav-item nav-link">About</a>
                     <a href="/contact" class="nav-item nav-link">Contact Us</a>
@@ -158,7 +158,7 @@
                         <th scope="col">Time & Date</th>
                         <th scope="col">Price</th>
                         <th scope="col">Available Seats</th>
-                        <th scope="col">How many Seats</th>
+                        <th scope="col" class="w-25">Enter Number of Seats</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
@@ -171,7 +171,7 @@
                          <form action="{{route('storeBokking' , $trip->id)}}" method="post">
                             @csrf
                         <td>
-                            <input type="number" name="number">
+                            <input type="number" name="number" >
                         </td>
                         <td>
                             <button type="submit" class="btn btn-outline-primary">Choose</button>

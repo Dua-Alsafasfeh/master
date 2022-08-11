@@ -520,7 +520,7 @@ h6,
     height: 4vh;
 }
 .book_now_btn {
-    width: 100%;
+    /* width: 100%; */
     display: block;
     background: #06A3DA;
     color: #FFFFFF;
