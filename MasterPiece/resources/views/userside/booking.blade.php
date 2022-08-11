@@ -171,7 +171,7 @@
                          <form action="{{route('storeBokking' , $trip->id)}}" method="post">
                             @csrf
                         <td>
-                            <input type="number" name="number" >
+                            <input type="number" name="number" required>
                         </td>
                         <td>
                             <button type="submit" class="btn btn-outline-primary">Choose</button>

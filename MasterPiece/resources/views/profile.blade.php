@@ -8,8 +8,19 @@ profile
  active 
 @endsection
 
-
 @section('content')
+{{-- Navbar Start --}}
+<div class="container-fluid bg-primary py-5 bg-header">
+    <div class="row py-5">
+        <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+            <h1 class="display-4 text-white animated zoomIn">Profile</h1>
+            <a href="/" class="h5 text-white">Home</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="" class="h5 text-white">Profile</a>
+        </div>
+    </div>
+</div>
+<!-- Navbar End -->
 <div class="container-fluid wow fadeInUp" data-wow-delay="0.1s" style="margin-top: 7%">
     <div class="container">
     <div class="row justify-content-center">
@@ -17,6 +28,7 @@ profile
             <div class="card bg-dark-lighter text-white mt-3">
                 <div class="card-header bg-dark d-flex">
                     <h4 class="m-0">
+                        <i class="fa-solid fa-id-card"></i>
                         Edit profile
                     </h4>
                 </div>
@@ -41,8 +53,6 @@ profile
                                      class="tab-pane fade {{ ! $errors->hasAny(['password', 'current_password']) ? 'show active' : ''}}">
                                     <form action="" method="POST">
                                         @csrf
-                                        @method('PATCH')
-
                                         <div class="form-group">
                                             <label for="user_name" class="text-dark">User Name</label>
                                             <input type="text" name="user_name" id="user_name"
@@ -145,10 +155,16 @@ profile
                         </div>
                     </div>
                 </div>
-                <div class="card-footer"></div>
+                <div class="card-footer bg-dark"></div>
             </div>
         </div>
     </div>
     </div>
 </div>
+{{-- ----payment start------ --}}
+
+
+
+
+{{-- ----payment end------ --}}
 @endsection
