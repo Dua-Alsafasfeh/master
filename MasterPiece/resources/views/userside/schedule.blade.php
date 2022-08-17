@@ -50,9 +50,9 @@ Schedule
   <tr class="tr-bg" scope="row">
     <th class="th-sm">Trip
     </th>
-    <th class="th-sm">Days
+    <th class="th-sm">Driver Name
     </th>
-    <th class="th-sm">Trip Schedule
+    <th class="th-sm">Driver Phone Number
     </th>
     <th class="th-sm">Price (JD)
     </th>
@@ -65,12 +65,12 @@ Schedule
 <tbody>
   @foreach ($schedule as $item )
   <tr scope="row">
-    <td class="">{{$item->from_id}}</td>
-    <td >{{$item->to_id}}</td>
-    <td >{{$item->trip_schedule}}</td>
+    <td >{{$item->city_name}} - {{$item->city_name}}</td>
+    <td >{{$item->driver_name}}</td>
+    <td >{{$item->phone_number}}</td>
     <td >{{$item->price}}</td>
-    <td >{{$item->path}}</td>
-    <td >{{$item->num_seats}}</td>
+    <td ></td>
+    <td >{{$item->size}}</td>
   </tr>
 @endforeach
 </tbody>

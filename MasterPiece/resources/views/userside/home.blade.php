@@ -95,7 +95,7 @@ Home
                                             <div class="input-group">
                                                 <select class="wide" name="from_id">
                                                    @foreach($cities as $city)
-                                                   <option value="{{$city->id}}">{{$city->name}}</option>
+                                                   <option value="{{$city->id}}">{{$city->city_name}}</option>
                                                    @endforeach
                                                 </select>
                                             </div>
@@ -115,7 +115,7 @@ Home
                                             <div class="input-group">
                                                 <select class="wide" name="to_id">
                                                     @foreach($cities as $city)
-                                                    <option value="{{$city->id}}">{{$city->name}}</option>
+                                                    <option value="{{$city->id}}">{{$city->city_name}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>

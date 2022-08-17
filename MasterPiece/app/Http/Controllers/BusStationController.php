@@ -54,7 +54,8 @@ class BusStationController extends Controller
             $trip_booking->save();
         }
         
-        return back();
+        // return back();
+        return view('userside.ticket');
 
     }
     

@@ -142,12 +142,12 @@
     <div class="d-lg-flex align-items-lg-center py-4">
         <div class="h3 text-muted">From:</div>
         <div class="ml-auto">
-            <strong>{{$city_from->name}}</strong>
+            <strong>{{$city_from->city_name}}</strong>
         </div>
         &nbsp;&nbsp;&nbsp;
         <div class="h3 text-muted">To:</div>
         <div class="ml-auto">
-            <strong>{{$city_to->name}}</strong>
+            <strong>{{$city_to->city_name}}</strong>
         </div>
     </div>
     <div id="top">
