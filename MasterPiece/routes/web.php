@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\BusStationController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,10 +36,13 @@ Route::controller(App\Http\Controllers\BusStationController::class)->group(funct
     // Route::get('/Login', 'viewLogin');
     Route::get('/booking', 'viewBooking')->name("booking");
     Route::post('/booking/{trip}', 'storeBokking')->name("storeBokking")->middleware("auth");
-    Route::get('/ticket/{trip}', 'viewTicket');
+    Route::get('/ticket/{id}', 'viewTicket');
 });
 Auth::routes();
 
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'index'])->name('profile');
 Route::get('/schedule',[App\Http\Controllers\ScheduleController::class,'index']);
 
+Route::put('/editprofile/{id}', [HomeController::class,'editProfile']);
+
+Route::post('/send-message',[ContactController::class,'sendEmail'])->name('contactsend');

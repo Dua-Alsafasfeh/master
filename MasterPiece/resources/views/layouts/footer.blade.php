@@ -15,7 +15,7 @@
             <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-3 ">
                 <div class="text-center section-title-sm position-relative">
                     <a href="/" class="navbar-brand p-0">
-                        <h3 class="m-0"><i class="fa-solid fa-bus me-2"></i>Bus Station</h3>
+                        <h2 class="m-0"><i class="fa-solid fa-bus me-2"></i>Bus Station</h2>
                     </a>
                 </div>
             </div>
@@ -38,17 +38,22 @@
             </div>
             <div class="col-lg-1 col-md-12 pt-0 pt-lg-5 mb-3">
                 <div class=" section-title-sm position-relative pb-3 mb-4">
-                    <a href="">Link 1</a>
+                    <a href="https://www.ltrc.gov.jo/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/ar/0/01/Jordan_coat_of_arms.png" class="w-75">Ministry of transport</a>
                 </div>
             </div>
             <div class="col-lg-1 col-md-12 pt-0 pt-lg-5 mb-3">
                 <div class=" section-title-sm position-relative pb-3 mb-4">
-                    <a href="">Link 2</a>
+                    <a href="http://www.ltrc.gov.jo/?q=en" target="_blank">
+                        <img src="https://www.ltrc.gov.jo/sites/default/files/styles/large/public/default_images/77777.png?itok=9eT_gHg1" class="w-100">
+                         Land Transport Regulatory Commission
+                    </a>
                 </div>
             </div>
             <div class="col-lg-1 col-md-12 pt-0 pt-lg-5 mb-3">
                 <div class=" section-title-sm position-relative pb-3 mb-4">
-                    <a href="">Link 3</a>
+                    <a href="http://www.jometeo.gov.jo/" target="_blank"><img src="https://albaladnews.net/assets/images/173689_34_1487343549.png" class="w-75">
+                    Jordan meteorological department
+                </a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-3 d-flex flex-row-reverse">
@@ -58,11 +63,11 @@
             </div>
             <div class="col-lg-2 col-md-12 pt-0 pt-lg-5 mb-3 ">
                 <div class=" section-title-sm position-relative pb-3 mb-4 ">
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded" target="_blank" href="https://www.facebook.com/Dua.alsafasfeh"><i
                             class="fab fa-facebook-f fw-normal"></i></a>
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded" target="_blank" href="https://instagram.com/duaalsafasfeh?utm_medium=copy_link"><i
                             class="fab fa-instagram fw-normal"></i></a>
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded" target="_blank" href="https://www.linkedin.com/in/du-a-alsafasfeh-70a9a7147"><i
                             class="fab fa-linkedin-in fw-normal"></i></a>
                 </div>
             </div>

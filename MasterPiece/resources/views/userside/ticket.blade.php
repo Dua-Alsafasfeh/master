@@ -156,7 +156,7 @@
                             <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
                                 <span data-toggle="pill" role="tab"
                                    class="nav-link active">
-                                    From : --------- To : ---------
+                                    From : <strong>---------</strong> To : <strong>---------</strong>
                                 </span>
                             </div>
                         </div>
@@ -210,7 +210,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-footer text-dark"></div>
+                <div class="card-footer bg-dark"></div>
             </div>
         </div>
     </div>

@@ -42,6 +42,14 @@ Contact us
 
 
 <!-- Contact Start -->
+<div class="container  text-dark px-3 mt-3">
+    @if (session('message_sent'))
+        <div class="alert alert-success" role="alert">
+            {{ session('message_sent') }}
+        </div>
+    @endif
+</div>
+
 <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
 <div class="container py-5">
     <div class="section-title text-center position-relative pb-5 mb-5 mx-auto" style="max-width: 600px;">
@@ -83,21 +91,23 @@ Contact us
             </div>
         </div>
     </div>
+    
     <div class="row g-5">
         <div class="col-lg-6 wow slideInUp" data-wow-delay="0.3s">
-            <form>
+            <form action="{{route('contactsend')}}" method="POST">
+                @csrf
                 <div class="row g-3">
                     <div class="col-md-6">
-                        <input type="text" class="form-control border-0 bg-light px-4" placeholder="Your Name" style="height: 55px;">
+                        <input type="text" class="form-control border-0 bg-light px-4" name="name" placeholder="Your Name" style="height: 55px;">
                     </div>
                     <div class="col-md-6">
-                        <input type="email" class="form-control border-0 bg-light px-4" placeholder="Your Email" style="height: 55px;">
+                        <input type="email" class="form-control border-0 bg-light px-4" name="email" placeholder="Your Email" style="height: 55px;">
                     </div>
                     <div class="col-12">
-                        <input type="text" class="form-control border-0 bg-light px-4" placeholder="Subject" style="height: 55px;">
+                        <input type="text" class="form-control border-0 bg-light px-4" name="subject" placeholder="Subject" style="height: 55px;">
                     </div>
                     <div class="col-12">
-                        <textarea class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Message"></textarea>
+                        <textarea class="form-control border-0 bg-light px-4 py-3" rows="4" name="msg" placeholder="Message"></textarea>
                     </div>
                     <div class="col-12">
                         <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>

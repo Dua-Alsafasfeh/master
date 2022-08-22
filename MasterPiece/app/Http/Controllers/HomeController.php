@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -24,5 +25,16 @@ class HomeController extends Controller
     public function index()
     {
         return view('/profile');
+    }
+
+    // edit profile 
+    public function editProfile(Request $request ,$id){
+        $user = User::find($id);
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->phone = $request->input('phone');
+        $user->update();
+        return redirect('/profile')->with('status','Information Updated Successfully');
+
     }
 }
