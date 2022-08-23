@@ -44,7 +44,7 @@ Contact us
 <!-- Contact Start -->
 <div class="container  text-dark px-3 mt-3">
     @if (session('message_sent'))
-        <div class="alert alert-success" role="alert">
+        <div class="alert alert-primary" role="alert">
             {{ session('message_sent') }}
         </div>
     @endif

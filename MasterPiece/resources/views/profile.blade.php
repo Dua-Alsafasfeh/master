@@ -24,7 +24,7 @@ profile
 {{-- profile start --}}
 <div class="container  text-dark px-3 mt-3">
     @if (session('status'))
-        <div class="alert alert-success" role="alert">
+        <div class="alert alert-primary" role="alert">
             {{ session('status') }}
         </div>
     @endif

@@ -33,7 +33,7 @@
     <!-- Template Stylesheet -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {{-- external style --}}
-    {{-- <link rel="stylesheet" href="{{ asset('style/ticket.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('style/ticket.css') }}">
 </head>
 
 <body>
@@ -137,7 +137,7 @@
 <!-- Navbar End -->
 
 <!-- start ticket-booking -->
-<div class="container-fluid wow fadeInUp" data-wow-delay="0.1s" style="margin-top: 7%">
+<div class="container-fluid wow fadeInUp mt-5" data-wow-delay="0.1s">
     <div class="container">
     <div class="row justify-content-center">
         <div class="col-sm-12 col-lg-8">
@@ -155,7 +155,7 @@
                         <div class="col-sm-12 col-md-5 col-xl-4 mb-4">
                             <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
                                 <span data-toggle="pill" role="tab"
-                                   class="nav-link active">
+                                   class="nav-link active text">
                                     From : <strong>---------</strong> To : <strong>---------</strong>
                                 </span>
                             </div>
@@ -163,7 +163,7 @@
                         <div class="col-sm-12 col-md-7 col-xl-8">
                             <div class="tab-content">
                                 <div>
-                                    <form action="" method="POST">
+                                    <form action="" method="">
                                         @csrf
 
                                         <div class="form-group m-2">
@@ -192,7 +192,7 @@
                                             <span class="text-dark">----</span>
                                         </div>
 
-                                        <div class="form-group mt-4 d-flex justify-content-center">
+                                        {{-- <div class="form-group mt-4 d-flex justify-content-center">
                                             <div class="col-6">
                                                 <button type="submit" class="btn btn-primary btn-block">
                                                     Confirm Booking
@@ -203,7 +203,7 @@
                                                     Cancel Booking
                                                 </button>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </form>
                                 </div>
                             </div>
@@ -218,6 +218,75 @@
 </div>
 
 <!-- end ticket-booking -->
+
+{{-- -----payment start---- --}}
+<div class="container-fluid wow fadeInUp mt-5" data-wow-delay="0.1s">
+    <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-lg-8">
+            <div class="cardpay bg-dark-lighter text-white mt-3">
+                <div class="card-header bg-dark d-flex">                   
+                    <h4 class="m-0">
+                        <i class="fa-regular fa-credit-card"></i>
+                     Paymet Information
+                    </h4>
+                </div>
+                <div class="container p-0 mt-3">
+                    <div class="cardpay px-4">
+                        {{-- <p class="h8 py-3">Payment Details</p> --}}
+                        <div class="row gx-3">
+                            <div class="col-12">
+                                <div class="d-flex flex-column">
+                                    <p class="text mb-1">Person Name</p>
+                                    <input class="form-control mb-3" type="text" placeholder="Name" value="Barry Allen">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="d-flex flex-column">
+                                    <p class="text mb-1">Card Number</p>
+                                    <input class="form-control mb-3" type="text" placeholder="1234 5678 435678">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex flex-column">
+                                    <p class="text mb-1">Expiry</p>
+                                    <input class="form-control mb-3" type="text" placeholder="MM/YYYY">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex flex-column">
+                                    <p class="text mb-1">CVV/CVC</p>
+                                    <input class="form-control mb-3 pt-2 " type="password" placeholder="***">
+                                </div>
+                            </div>
+                            <div class="form-group mt-3 mb-2 d-flex justify-content-center">
+                                <div class="col-6">
+                                    <button type="submit" class="btn btn-primary btn-block">
+                                        Confirm Booking
+                                    </button>
+                                </div>
+                                <div class="col-6">
+                                    <button type="submit" class="btn btn-primary btn-block mx-2">
+                                        Cancel Booking
+                                    </button>
+                                </div>
+                            </div>
+                            {{-- <div class="col-12">
+                                <div class="btn btn-primary mb-3">
+                                    <span class="ps-3">Pay $243</span>
+                                    <span class="fas fa-arrow-right"></span>
+                                </div>
+                            </div> --}}
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-dark"></div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+{{-- -----payment end---- --}}
 
 <!-- Footer Start -->
 <div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">

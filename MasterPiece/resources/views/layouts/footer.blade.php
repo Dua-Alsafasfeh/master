@@ -38,20 +38,23 @@
             </div>
             <div class="col-lg-1 col-md-12 pt-0 pt-lg-5 mb-3">
                 <div class=" section-title-sm position-relative pb-3 mb-4">
-                    <a href="https://www.ltrc.gov.jo/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/ar/0/01/Jordan_coat_of_arms.png" class="w-75">Ministry of transport</a>
+                    <a href="https://www.ltrc.gov.jo/" target="_blank">
+                        {{-- <img src="https://upload.wikimedia.org/wikipedia/ar/0/01/Jordan_coat_of_arms.png" class="w-75"> --}}
+                        Ministry of transport</a>
                 </div>
             </div>
             <div class="col-lg-1 col-md-12 pt-0 pt-lg-5 mb-3">
                 <div class=" section-title-sm position-relative pb-3 mb-4">
                     <a href="http://www.ltrc.gov.jo/?q=en" target="_blank">
-                        <img src="https://www.ltrc.gov.jo/sites/default/files/styles/large/public/default_images/77777.png?itok=9eT_gHg1" class="w-100">
+                        {{-- <img src="https://www.ltrc.gov.jo/sites/default/files/styles/large/public/default_images/77777.png?itok=9eT_gHg1" class="w-100"> --}}
                          Land Transport Regulatory Commission
                     </a>
                 </div>
             </div>
             <div class="col-lg-1 col-md-12 pt-0 pt-lg-5 mb-3">
                 <div class=" section-title-sm position-relative pb-3 mb-4">
-                    <a href="http://www.jometeo.gov.jo/" target="_blank"><img src="https://albaladnews.net/assets/images/173689_34_1487343549.png" class="w-75">
+                    <a href="http://www.jometeo.gov.jo/" target="_blank">
+                        {{-- <img src="https://albaladnews.net/assets/images/173689_34_1487343549.png" class="w-75"> --}}
                     Jordan meteorological department
                 </a>
                 </div>

@@ -36,7 +36,7 @@ Route::controller(App\Http\Controllers\BusStationController::class)->group(funct
     // Route::get('/Login', 'viewLogin');
     Route::get('/booking', 'viewBooking')->name("booking");
     Route::post('/booking/{trip}', 'storeBokking')->name("storeBokking")->middleware("auth");
-    Route::get('/ticket/{id}', 'viewTicket');
+    Route::get('/ticket', 'viewTicket');
 });
 Auth::routes();
 

@@ -6,6 +6,7 @@ use App\Models\City;
 use App\Models\Trip;
 use App\Models\TripBooking;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BusStationController extends Controller
 {
@@ -53,16 +54,14 @@ class BusStationController extends Controller
             $trip_booking->user_id = auth()->id();
             $trip_booking->save();
         }
-        
+        // $user_id=Auth::user()->id;
         // return back();
         return redirect('/ticket');
 
     }
     
-    public function viewTicket(Request $request){
-        $city_from = City::find($request->get("from_id"));
-        $city_to = City::find($request->get("to_id"));
-        $trips = Trip::with(['tripBookings' , 'bus'])->where("from_id" , $request->get("from_id"))->where("to_id" , $request->get("to_id"))->get();
-        return view('userside.ticket', compact("trips", "city_from", "city_to"));
+    public function viewTicket(){
+
+        return view('userside.ticket');
     }
 }
