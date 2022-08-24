@@ -49,15 +49,15 @@ profile
                                    class="nav-link {{ ! $errors->hasAny(['password', 'current_password']) ? 'active' : ''}}">
                                     Profile information
                                 </a>
-                                <a class="nav-link {{ $errors->hasAny(['password', 'current_password']) ? 'active' : ''}}"
-                                   data-toggle="pill" href="#v-pills-password" role="tab">
-                                    Change password
-                                </a>
+                                {{-- <a class="nav-link {{ $errors->hasAny(['password', 'current_password']) ? 'active' : ''}}"
+                                    data-toggle="pill" href="#v-pills-password" role="tab">
+                                     Change password
+                                 </a> --}}
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-7 col-xl-8">
                             <div class="tab-content">
-                                <div id="v-pills-profile-info" role="tabpanel"
+                                <div id="v-pills-profile-info" role="tabpanel" style="display: block"
                                      class="tab-pane fade {{ ! $errors->hasAny(['password', 'current_password']) ? 'show active' : ''}}">
                                     <form action="/editprofile/{{Auth::user()->id}}" method="POST">
                                         @csrf
@@ -75,20 +75,6 @@ profile
                                                 </span>
                                             @enderror
                                         </div>
-
-                                        {{-- <div class="form-group">
-                                            <label for="last-name">Last name</label>
-                                            <input type="text" name="last_name" id="last-name"
-                                                   class="form-control input-dark @error('last_name') is-invalid @enderror"
-                                                   value="{{ old('last_name', auth()->user()->last_name) }}"
-                                                   required>
-
-                                            @error('last_name')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div> --}}
 
                                         <div class="form-group">
                                             <label for="email" class="text-dark">Email</label>
@@ -124,11 +110,55 @@ profile
                                         </div>
                                     </form>
                                 </div>
-                                <div id="v-pills-password" role="tabpanel"
-                                     class="tab-pane fade {{ $errors->hasAny(['password', 'current_password']) ? 'show active' : ''}}">
-                                    <form action=""
+
+                                {{-- update password --}}
+                                {{-- <div id="#v-pills-password" role="tabpanel" style="display: block"
+                                     class="tab-pane fade {{ ! $errors->hasAny(['password', 'current_password']) ? 'show active' : ''}}">
+                                    <form action="/editpassword/{{Auth::user()->id}}" method="POST">
+                                        @csrf
+                                        @method('PUT')
+                                        <div class="form-group">
+                                            <label for="password" class="text-dark">New Password</label>
+                                            <input type="password" name="password" id="password"
+                                                   class="form-control input-dark @error('password') is-invalid @enderror"
+                                                   value="{{ old('password', auth()->user()->password) }}"
+                                                   required autofocus>
+
+                                            @error('password')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password-confirm" class="text-dark">Confirm password</label>
+                                            <input type="password" name="password-confirm" id="password-confirm"
+                                                   class="form-control input-dark @error('password-confirm') is-invalid @enderror"
+                                                   
+                                                   required autofocus>
+
+                                            @error('password-confirm')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+
+                                        <div class="form-group mt-4 d-flex justify-content-center">
+                                            <div class="col-6">
+                                                <button type="submit" class="btn btn-primary btn-block">
+                                                    Save changes
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div> --}}
+                                {{-- <div id="v-pills-password" role="tabpanel"
+                                     class="tab-pane fade  {{ $errors->hasAny(['password', 'current_password']) ? 'show active' : ''}}">
+                                    <form action="/editPassword/{{Auth::user()->id}}"
                                           method="POST">
                                         @csrf
+                                        @method('PUT')
                                         <div class="form-group">
                                             <label for="current-password">Current password</label>
                                             <input type="password" name="current_password" id="current-password"
@@ -169,7 +199,7 @@ profile
                                             </div>
                                         </div>
                                     </form>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -340,6 +370,6 @@ profile
     </div>
 </div>
 
-
 {{-- ----booking history end------ --}}
 @endsection
+

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -37,4 +38,13 @@ class HomeController extends Controller
         return redirect('/profile')->with('status','Information Updated Successfully');
 
     }
+
+    //booking history
+    // public function bookingHistory(){
+    //     $history = DB::table('trip_bookings')
+    //     ->join('trips','trip_bookings.trip_id','=','trips.id')
+    //     ->join('users','trip_bookings.user_id','=','users.id')
+    //     ->select('trip_bookings.*',)
+
+    // }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\City;
 use App\Models\Trip;
+use App\Models\Payment;
 use App\Models\TripBooking;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -32,6 +33,8 @@ class BusStationController extends Controller
     public function viewLogin(){
         return view('auth.login');
     }
+
+    // get trip details
     public function viewBooking(Request $request){
         $request->validate([
             "from_id" => "required",
@@ -43,6 +46,7 @@ class BusStationController extends Controller
         return view('userside.booking' , compact("trips" , "city_from" , "city_to"));
     }
 
+    // store booking details
     public function  storeBokking(Request $request , Trip $trip){
         $request->validate([
             "number" => "required"
@@ -59,9 +63,32 @@ class BusStationController extends Controller
         return redirect('/ticket');
 
     }
-    
+
+    // ticket page
     public function viewTicket(){
 
         return view('userside.ticket');
+    }
+
+    //payment section
+    public function storePayment(Request $request , TripBooking $tripBooking){
+        $request->validate([
+            'person_name' =>'required|string|max:255',
+            'card_num' => 'required|max:16',
+            'expiry' =>'required',
+            'cvv' => 'required|number|max:3'
+        ]);
+
+        $payment = new Payment;
+        $payment->person_name = $request->input('person_name');
+        $payment->card_num = $request->input('card_num');
+        $payment->expiry = $request->input('expiry');
+        $payment->cvv = $request->input('cvv');
+        $payment->user_id = Auth()->id();
+        $payment->trip_booking_id = $tripBooking->id;
+        $payment->total_price = null;
+        $payment->save();
+        return redirect()->back()->with('status','Trip has been Confirmed, and Payment completed successfully');
+
     }
 }

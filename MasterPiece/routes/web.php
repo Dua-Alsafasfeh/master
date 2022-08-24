@@ -37,6 +37,7 @@ Route::controller(App\Http\Controllers\BusStationController::class)->group(funct
     Route::get('/booking', 'viewBooking')->name("booking");
     Route::post('/booking/{trip}', 'storeBokking')->name("storeBokking")->middleware("auth");
     Route::get('/ticket', 'viewTicket');
+    Route::post('/storepayment/{id}', 'storePayment');
 });
 Auth::routes();
 
@@ -44,5 +45,6 @@ Route::get('/profile', [App\Http\Controllers\HomeController::class, 'index'])->n
 Route::get('/schedule',[App\Http\Controllers\ScheduleController::class,'index']);
 
 Route::put('/editprofile/{id}', [HomeController::class,'editProfile']);
+// Route::put('/editpassword/{id}', [HomeController::class,'editPassword']);
 
 Route::post('/send-message',[ContactController::class,'sendEmail'])->name('contactsend');

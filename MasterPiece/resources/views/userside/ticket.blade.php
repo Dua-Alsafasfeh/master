@@ -137,6 +137,13 @@
 <!-- Navbar End -->
 
 <!-- start ticket-booking -->
+<div class="container  text-dark px-3 mt-3">
+    @if (session('status'))
+        <div class="alert alert-primary" role="alert">
+            {{ session('status') }}
+        </div>
+    @endif
+</div>
 <div class="container-fluid wow fadeInUp mt-5" data-wow-delay="0.1s">
     <div class="container">
     <div class="row justify-content-center">
@@ -188,7 +195,7 @@
                                         </div>
                                         <div class="form-group m-2">
                                             <i class="fa-solid fa-hand-holding-dollar text-dark"></i>
-                                            <span class="text-dark h5">Total Price :</span>
+                                            <span class="text-dark h5">Total Cost :</span>
                                             <span class="text-dark">----</span>
                                         </div>
 
@@ -235,28 +242,55 @@
                     <div class="cardpay px-4">
                         {{-- <p class="h8 py-3">Payment Details</p> --}}
                         <div class="row gx-3">
+                            <form action="/storepayment/{{Auth::user()->id}}" method="POST">
+                                @csrf
+                                {{-- @method('PUT') --}}
                             <div class="col-12">
                                 <div class="d-flex flex-column">
                                     <p class="text mb-1">Person Name</p>
-                                    <input class="form-control mb-3" type="text" placeholder="Name" value="Barry Allen">
+                                    <input class="form-control mb-3" type="text" placeholder="Name" name="person_name" value="Barry Allen" required @error('person_name') is-invalid @enderror>
+
+                                    @error('person_name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="d-flex flex-column">
                                     <p class="text mb-1">Card Number</p>
-                                    <input class="form-control mb-3" type="text" placeholder="1234 5678 435678">
+                                    <input class="form-control mb-3" type="text" name="card_num" placeholder="1234 5678 435678" required @error('card_num') is-invalid @enderror>
+
+                                    @error('card_num')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="d-flex flex-column">
                                     <p class="text mb-1">Expiry</p>
-                                    <input class="form-control mb-3" type="text" placeholder="MM/YYYY">
+                                    <input class="form-control mb-3" type="date" name="expiry"  placeholder="DD/MM/YYYY" min="2022-08-01" required @error('expiry') is-invalid @enderror>
+
+                                    @error('expiry')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="d-flex flex-column">
                                     <p class="text mb-1">CVV/CVC</p>
-                                    <input class="form-control mb-3 pt-2 " type="password" placeholder="***">
+                                    <input class="form-control mb-3 pt-2 " type="password" name="cvv" placeholder="***" required @error('cvv') is-invalid @enderror>
+
+                                    @error('cvv')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group mt-3 mb-2 d-flex justify-content-center">
@@ -277,6 +311,7 @@
                                     <span class="fas fa-arrow-right"></span>
                                 </div>
                             </div> --}}
+                            <form>
                         </div>
                     </div>
                 </div>
