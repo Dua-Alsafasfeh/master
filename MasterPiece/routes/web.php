@@ -41,8 +41,8 @@ Route::controller(App\Http\Controllers\BusStationController::class)->group(funct
 });
 Auth::routes();
 
-Route::get('/profile', [App\Http\Controllers\HomeController::class, 'index'])->name('profile');
-Route::get('/schedule',[App\Http\Controllers\ScheduleController::class,'index']);
+Route::get('/profile', [HomeController::class, 'index'])->name('profile');
+Route::get('/schedule',[ScheduleController::class,'index']);
 
 Route::put('/editprofile/{id}', [HomeController::class,'editProfile']);
 // Route::put('/editpassword/{id}', [HomeController::class,'editPassword']);

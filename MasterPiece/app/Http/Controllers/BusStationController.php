@@ -40,6 +40,9 @@ class BusStationController extends Controller
             "from_id" => "required",
             "to_id" => "required"
         ]);
+        if($request->get("from_id") == $request->get("to_id")){
+        return back()->with('city_error','Please Choose Correct Data!');
+    }
         $city_from = City::find($request->get("from_id"));
         $city_to = City::find($request->get("to_id"));
         $trips = Trip::with(['tripBookings' , 'bus'])->where("from_id" , $request->get("from_id"))->where("to_id" , $request->get("to_id"))->get();
@@ -52,15 +55,17 @@ class BusStationController extends Controller
             "number" => "required"
         ]);
 
-        for($i = 0 ; $i < $request->number ; $i++){
-            $trip_booking = new TripBooking();
-            $trip_booking->trip_id = $trip->id;
-            $trip_booking->user_id = auth()->id();
-            $trip_booking->save();
-        }
+        // for($i = 0 ; $i < $request->number ; $i++){
+        //     $trip_booking = new TripBooking();
+        //     $trip_booking->trip_id = $trip->id;
+        //     $trip_booking->user_id = auth()->id();
+        //     $trip_booking->save();
+        // }
         // $user_id=Auth::user()->id;
         // return back();
-        return redirect('/ticket');
+        $number = $request->get("number");
+
+        return view('userside.ticket' , compact('trip' , 'number'));
 
     }
 
@@ -76,7 +81,7 @@ class BusStationController extends Controller
             'person_name' =>'required|string|max:255',
             'card_num' => 'required|max:16',
             'expiry' =>'required',
-            'cvv' => 'required|number|max:3'
+            'cvv' => 'required|integer|max:3'
         ]);
 
         $payment = new Payment;
@@ -84,8 +89,8 @@ class BusStationController extends Controller
         $payment->card_num = $request->input('card_num');
         $payment->expiry = $request->input('expiry');
         $payment->cvv = $request->input('cvv');
-        $payment->user_id = Auth()->id();
-        $payment->trip_booking_id = $tripBooking->id;
+        // $payment->user_id = Auth()->id();
+        // $payment->trip_booking_id = $tripBooking->id;
         $payment->total_price = null;
         $payment->save();
         return redirect()->back()->with('status','Trip has been Confirmed, and Payment completed successfully');

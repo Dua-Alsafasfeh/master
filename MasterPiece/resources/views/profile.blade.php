@@ -213,7 +213,6 @@ profile
 {{---------- profile end------ --}}
 
 {{-- ----booking history start------ --}}
-
 <div class="container-fluid wow fadeInUp mt-5" data-wow-delay="0.1s" >
     <div class="container">
     <div class="row justify-content-center">

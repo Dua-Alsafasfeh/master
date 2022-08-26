@@ -24,14 +24,15 @@
     <script src="https://kit.fontawesome.com/71fa6fa637.js" crossorigin="anonymous"></script>
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="{{asset('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+    <link href="{{asset('lib/animate/animate.min.css')}}" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
     <!-- Template Stylesheet -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="@yield('styleticket')">
 </head>
 
 <body>
@@ -92,7 +93,7 @@
 
             </div>
             <div class="navbar-nav ms-auto py-0 col-lg-3 text-center text-lg-end">
-                {{-- <ul class="navbar-nav ms-auto"> --}}
+                {{-- <ul class="navbar-nav ml-auto"> --}}
                 @guest
                 @if (Route::has('login'))
                     <li class="nav-item">

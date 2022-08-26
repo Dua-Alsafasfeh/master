@@ -72,6 +72,13 @@ Home
 <!-- Full Screen Search End -->
 
 <!-- start Booking -->
+<div class="container  text-dark px-3 mt-3">
+    @if (session('city_error'))
+        <div class="alert alert-primary" role="alert">
+            {{ session('city_error') }}
+        </div>
+    @endif
+</div>
 <div class="container-fluid py-4 wow fadeInUp" data-wow-delay="0.1s">
 <div class="hotel_booking_area position">
     <div class="container-fluid">
@@ -93,7 +100,7 @@ Home
                                         <div class="form-group">
                                         <div class="book_tabel_item">
                                             <div class="input-group">
-                                                <select class="wide" name="from_id">
+                                                <select class="wide" name="from_id" id="select_from" onchange="validationSelect()">
                                                    @foreach($cities as $city)
                                                    <option value="{{$city->id}}">{{$city->city_name}}</option>
                                                    @endforeach
@@ -113,7 +120,7 @@ Home
                                         <div class="form-group">
                                         <div class="book_tabel_item">
                                             <div class="input-group">
-                                                <select class="wide" name="to_id">
+                                                <select class="wide" name="to_id" id="select_to" onchange="validationSelect()">
                                                     @foreach($cities as $city)
                                                     <option value="{{$city->id}}">{{$city->city_name}}</option>
                                                     @endforeach
@@ -125,6 +132,9 @@ Home
                                 </div>
                             </div>
                         </div>
+                        {{-- @error("city_error")
+                            {{$message}}
+                        @enderror --}}
                         <div class="col-md-4">
                             <div class="book_tabel_item">
                                 <div class="form-group">
@@ -206,6 +216,58 @@ Home
             <h5 class="fw-bold text-primary text-uppercase">Booking Plans</h5>
             <h1 class="mb-0">Steps to Book your prebooking trip</h1>
         </div>
+        <div class="row g-5">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-primary text-uppercase mb-2">How To Book!</h6>
+                <h1 class="display-6 mb-4">A New Transportation Experience</h1>
+                <p class="mb-5">Bus station aims to improve public transportation in Jordan. it provides a convenient transportation experience with advanced information system and electronic payments through using a credit card.</p>
+                <div class="row gy-5 gx-4">
+                    <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0 btn-square bg-primary me-3">
+                                <i class="fa-solid fa-user-plus text-white mt-2"></i>
+                            </div>
+                            <h5 class="mb-0">Register</h5>
+                        </div>
+                        <span>1. You have to Register or Login if you have an account.</span>
+                    </div>
+                    <div class="col-sm-6 wow fadeIn" data-wow-delay="0.2s">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0 btn-square bg-primary me-3">
+                                <i class="fa-solid fa-check text-white mt-2"></i>
+                            </div>
+                            <h5 class="mb-0">Choose a Trip</h5>
+                        </div>
+                        <span>2. Choose the Trip you want; City-From and City-To, then click on <strong>BOOK Now.</strong></span>
+                    </div>
+                    <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0 btn-square bg-primary me-3">
+                                <i class="fa-solid fa-person-chalkboard text-white mt-2"></i>
+                            </div>
+                            <h5 class="mb-0">Choose a Trip Details</h5>
+                        </div>
+                        <span>3. Choose a Trip's time, date and number of seats, then click on <strong>choose</strong>.</span>
+                    </div>
+                    <div class="col-sm-6 wow fadeIn" data-wow-delay="0.4s">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0 btn-square bg-primary me-3">
+                                <i class="fa-solid fa-credit-card text-white mt-2"></i>
+                            </div>
+                            <h5 class="mb-0">Insert Payment Details</h5>
+                        </div>
+                        <span>4. Insert credit card details to pay for a trip then click on <strong>confirm booking</strong>.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="position-relative overflow-hidden pe-5 pt-5 h-100" style="min-height: 400px;">
+                    <img class="position-absolute w-100 h-100" src="https://images.pexels.com/photos/3847770/pexels-photo-3847770.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" style="object-fit: cover;">
+                    <img class="position-absolute top-0 end-0 bg-white ps-3 pb-3" src="https://media.istockphoto.com/photos/happy-driver-driving-bus-and-snowing-thumbs-up-picture-id529420242?k=20&m=529420242&s=612x612&w=0&h=95-KvHZHyOovlozAcR5gtwttqOZ1iFD18aFIGdYDob0=" alt="" style="width: 200px; height: 200px">
+                </div>
+            </div>
+        </div>
+
         <!-- <div class="row g-0">
             <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
                 <div class="bg-light rounded">
@@ -283,5 +345,17 @@ Home
     </div>
 </div>
 <!-- Pricing Plan End -->
+
+
+{{-- <script>
+    function validationSelect(){
+        var from_id = document.getElementById('select_from');
+        var to_id = document.getElementById('select_to');
+
+        if(from_id.value == to_id.value){
+
+        }
+    }
+    </script> --}}
 
 @endsection

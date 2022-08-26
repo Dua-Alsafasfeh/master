@@ -56,21 +56,22 @@ Schedule
     </th>
     <th class="th-sm">Price (JD)
     </th>
-    <th class="th-sm">Path
-    </th>
     <th class="th-sm">Number of Seats
     </th>
+    <th class="th-sm">Path
+    </th>
+    
   </tr>
 </thead>
 <tbody>
   @foreach ($schedule as $item )
   <tr scope="row">
-    <td >{{$item->city_name}} - {{$item->city_name}}</td>
-    <td >{{$item->driver_name}}</td>
-    <td >{{$item->phone_number}}</td>
+    <td >{{$item->city_from->city_name}} - {{$item->city_to->city_name}}</td>
+    <td >{{$item->driver->driver_name}}</td>
+    <td >{{$item->driver->phone_number}}</td>
     <td >{{$item->price}}</td>
-    <td ></td>
-    <td >{{$item->size}}</td>
+    <td >{{$item->bus->size}}</td>
+    <td ><button type="button" class="btn btn-outline-primary" onclick="showpath({{$item}})">Show</button></td> 
   </tr>
 @endforeach
 </tbody>
@@ -78,5 +79,37 @@ Schedule
 </div>
 </div>
 </div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          {{-- <span aria-hidden="true">&times;</span> --}}
+        </button>
+      </div>
+      <div class="modal-body">
+       <span class="bg-primary">Start</span>
+        <i class="fas fa-map-marker-alt bg-indigo">--------</i>
+        <span class="bg-primary">End</span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- schedule End -->
+
+<script>
+  function showpath(object){
+    console.log(object)
+  }
+  </script>
 @endsection
