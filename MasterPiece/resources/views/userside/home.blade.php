@@ -84,7 +84,7 @@ Home
     <div class="container-fluid">
         <form action="/booking" method="get">
             @csrf 
-        <div class="seat_booking_table">
+        <div class="seat_booking_table row">
             <div class="col-md-3"> 
                 <h2 class="text-white">Book Your Seat</h2>
             </div> 

@@ -42,7 +42,7 @@ Schedule
 
 
 <!-- schedule Start -->
-<div class="container-fluid py-4 wow fadeInUp" data-wow-delay="0.1s">
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
 <div class="seat_booking_area position">
 <div class="container">
 <table class="table table-striped table-bordered table-md table-wrapper-scroll-y my-custom-scrollbar" cellspacing="0" width="100%">

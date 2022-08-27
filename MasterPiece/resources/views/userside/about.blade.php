@@ -51,7 +51,7 @@ About us
                 <h1 class="mb-0">One of the suggestions for public transportation obstacles in Jordan</h1>
             </div>
             <p class="mb-4">Our mission is to provide our customers with the highest level of transportation solutions by offering customers with a safe, punctual and credible journey.
-                Our vision is to provide a safe, reliable and affordable transportation service for passengers in a local and international network and to continually upgrade its fleet and services to meet the market needs.</p>
+            Our vision is to provide a safe and reliable transportation service for passengers in a local network and to continually upgrade its fleet and services to meet the market needs.</p>
             <!-- <div class="row g-0 mb-3">
                 <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
                     <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Award Winning</h5>

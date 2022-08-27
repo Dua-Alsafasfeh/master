@@ -18,8 +18,6 @@ Technologies Used:
 1. PHP
 1. Laravel
 
-I'm DO IT!
-
 create a Bus Reservation System.
 
 ## Project Overview

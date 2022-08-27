@@ -56,7 +56,7 @@ Login
     <div class="form-group">
         <button type="submit" class="btn btn-outline-info btn-lg btn-block">Login</button>
     </div>
-    <div class="bottom-action clearfix">
+    {{-- <div class="bottom-action clearfix">
         <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
         <label class="form-check-label" for="remember">
@@ -68,7 +68,7 @@ Login
                 {{ __('Forgot Password?') }}
             </a>
         @endif
-    </div>
+    </div> --}}
 </form>
 <p class="text-center small">Don't have an account?<a href="{{ route('register') }}">Register here!</a></p>
 </div>

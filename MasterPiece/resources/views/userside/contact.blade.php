@@ -50,7 +50,7 @@ Contact us
     @endif
 </div>
 
-<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+<div class="container-fluid py-2 wow fadeInUp" data-wow-delay="0.1s">
 <div class="container py-5">
     <div class="section-title text-center position-relative pb-5 mb-5 mx-auto" style="max-width: 600px;">
         <h5 class="fw-bold text-primary text-uppercase">Contact Us</h5>
@@ -74,8 +74,8 @@ Contact us
                     <i class="fa fa-envelope-open text-white"></i>
                 </div>
                 <div class="ps-4">
-                    <h5 class="mb-2">Email to get free quote</h5>
-                    <h4 class="text-primary mb-0">bus-station@example.com</h4>
+                    <h5 class="mb-2">Email to contact us</h5>
+                    <h4 class="text-primary mb-0">bus-station@gmail.com</h4>
                 </div>
             </div>
         </div>

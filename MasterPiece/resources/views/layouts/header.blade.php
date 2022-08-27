@@ -51,7 +51,7 @@
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
                     <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Aqaba, Jordan</small>
                     <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+0777 777 777</small>
-                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>bus_station@mail.com</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>bus_station@gmail.com</small>
                 </div>
             </div>
             <div class="col-lg-4 text-center text-lg-end">
@@ -83,7 +83,7 @@
                 <span class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse col-lg-7 mx-5 text-center text-lg-start d-flex justify-content-center" id="navbarCollapse">
-                <div class="navbar-nav ms-5 py-0 ">
+                <div class="navbar-nav ms-auto py-0">
                     <a href="/" class="nav-item nav-link @yield('home')">Home</a>
                     <a href="/schedule" class="nav-item nav-link @yield('schedule')">Schedule</a>
                     <a href="{{ route('about')}}" class="nav-item nav-link @yield('about')">About</a>
@@ -91,9 +91,8 @@
                     <a href="/gallery" class="nav-item nav-link @yield('gallery')">Gallery</a>
                 </div>
 
-            </div>
-            <div class="navbar-nav ms-auto py-0 col-lg-3 text-center text-lg-end">
-                {{-- <ul class="navbar-nav ml-auto"> --}}
+                <div class="navbar-nav ms-auto py-0 col-lg-3 text-end text-lg-end">
+                <ul class="navbar-nav ml-auto">
                 @guest
                 @if (Route::has('login'))
                     <li class="nav-item">
@@ -108,7 +107,7 @@
                 @endif
                 @else
                 <li class="nav-item">
-                    <a class="nav-link @yield('profile')" href="{{ route('profile') }}">{{ Auth::user()->name }}</a>
+                    <a class="nav-link m-auto @yield('profile')" href="{{ route('profile') }}">{{ Auth::user()->name }}</a>
                     
                 </li>
                 <li class="nav-item">
@@ -137,7 +136,9 @@
                             </li> --}}
                             
                             @endguest
-                {{-- </ul> --}}
+                </ul>
             </div>
+            </div>
+            
         </nav>
     </div>

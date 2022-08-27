@@ -76,7 +76,7 @@ Ticket
                                         <div class="form-group m-2">
                                             <i class="fa-solid fa-arrow-up-1-9 text-dark"></i>
                                             <span class="text-dark h5">Number of Seats :</span>
-                                            <span class="text-dark">{{ $trip->bus->size }}</span>
+                                            <span class="text-dark">{{ $number }}</span>
                                         </div>
                                         <div class="form-group m-2">
                                             <i class="fa-solid fa-hand-holding-dollar text-dark"></i>
@@ -128,8 +128,9 @@ Ticket
                     <div class="cardpay px-4">
                         {{-- <p class="h8 py-3">Payment Details</p> --}}
                         <div class="row gx-3">
-                            <form action="/storepayment/{{Auth::user()->id}}" method="POST">
+                            <form action="/storepayment" method="POST">
                                 @csrf
+                                
                             <div class="col-12">
                                 <div class="d-flex flex-column">
                                     <p class="text mb-1">Person Name</p>
@@ -169,6 +170,8 @@ Ticket
                             <div class="col-12">
                                 <div class="d-flex flex-column">
                                     <p class="text mb-1">CVV/CVC</p>
+                                    <input type="hidden" value="{{$trip->price * $number}}" name="price">
+                                    <input type="hidden" value="{{$trip->id}}" name="trip_id">
                                     <input class="form-control mb-3 pt-2 " type="password" name="cvv" value="{{old('cvv')}}" placeholder="***" required @error('cvv') is-invalid @enderror>
 
                                     @error('cvv')
