@@ -23,16 +23,16 @@ Booking
 
 <!-- start booking -->
 <div class="container mt-5">
-    <div class="h3 text-muted">Seat Booking</div>
-    <div class="d-lg-flex align-items-lg-center py-4">
-        <div class="h3 text-muted">From:</div>
+    <div class="h3 text-dark"><i class="fa-solid fa-circle-info text-dark"></i>&nbsp;Seats Booking Details</div>
+    <div class="d-lg-flex align-items-lg-center py-4">  
+        <div class="h3 text-dark"><i class="fa-solid fa-route text-dark"></i>&nbsp;From:&nbsp;</div>
         <div class="ml-auto">
-            <strong>{{$city_from->city_name}}</strong>
+            <p class="h3 text-primary">{{$city_from->city_name}}</p>
         </div>
         &nbsp;&nbsp;&nbsp;
-        <div class="h3 text-muted">To:</div>
+        <div class="h3 text-dark">To:&nbsp;</div>
         <div class="ml-auto">
-            <strong>{{$city_to->city_name}}</strong>
+            <p class="h3 text-primary">{{$city_to->city_name}}</p>
         </div>
     </div>
     <div id="top">

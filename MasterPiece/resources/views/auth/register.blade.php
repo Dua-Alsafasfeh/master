@@ -30,9 +30,9 @@ Register
     <div class="row">
         <div class="col">
         <label for="first_name" class="col-md col-form-label text-md-end">{{ __('First Name') }}</label>
-        <input id="first_name" type="text" class="form-control @error('name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}" required autocomplete="first_name" autofocus>
+        <input id="first_name" type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}" autocomplete="first_name" autofocus>
 
-        @error('name')
+        @error('first_name')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
@@ -40,9 +40,9 @@ Register
         </div>
         <div class="col">
         <label for="last_name" class="col-md col-form-label text-md-end">{{ __('Last Name') }}</label>
-        <input id="last_name" type="text" class="form-control @error('name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}" required autocomplete="last_name" autofocus>
+        <input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}" autocomplete="last_name" autofocus>
 
-        @error('name')
+        @error('last_name')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
@@ -55,7 +55,7 @@ Register
     <div class="col-md-12">
     {{-- <input type="email" class="form-control" name="email" placeholder="Email" required="required"> --}}
     <label for="email" class="col-md col-form-label text-md-end">{{ __('Email Address') }}</label>
-        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email">
 
         @error('email')
             <span class="invalid-feedback" role="alert">
@@ -68,7 +68,7 @@ Register
     <div class="col-md-12">
     <label for="password" class="col-md col-form-label text-md-end">{{ __('Password') }}</label>
 
-    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="new-password">
 
     @error('password')
     <span class="invalid-feedback" role="alert">
@@ -80,14 +80,14 @@ Register
 <div class="form-group">
     <div class="col-md-12">
         <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+        <input id="password-confirm" type="password" class="form-control" name="password_confirmation"  autocomplete="new-password">
     </div>
 </div>        
 <div class="form-group">
     {{-- <input type="number" class="form-control" name="mobile" placeholder="Mobile Number" required="required"> --}}
     <div class="col-md-12">
         <label for="phone" class="col-md col-form-label text-md-end">{{ __('Phone Number') }}</label>
-            <input id="phone" type="tel" class="form-control @error('phone') is-invalid @enderror rounded form-control-md"  name="phone" value="{{ old('phone') }}" required autocomplete="phone">
+            <input id="phone" type="tel" class="form-control @error('phone') is-invalid @enderror rounded form-control-md"  name="phone" value="{{ old('phone') }}" autocomplete="phone">
             @error('phone')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -96,7 +96,13 @@ Register
     </div>
 </div>                
 <div class="form-group">
-    <label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+    <input type="checkbox" name="check" class="@error('check') is-invalid @enderror">
+    <label class="form-check-label"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a>
+    </label> @error('check')
+    <span class="invalid-feedback" role="alert">
+        <strong>{{ $message }}</strong>
+    </span>
+    @enderror
 </div>
 <div class="form-group">
     <button type="submit" class="btn btn-outline-info btn-lg btn-block">Register Now</button>

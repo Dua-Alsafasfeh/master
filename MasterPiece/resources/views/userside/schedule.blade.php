@@ -79,29 +79,31 @@ Schedule
 </div>
 </div>
 </div>
-<!-- Button trigger modal -->
-{{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Launch demo modal
-</button> --}}
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" style="background-color: rgba(0,0,0,0.6)"   aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" style="background-color: rgba(0,0,0,0.7)"   aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Trip Path</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <h5 class="modal-title" id="exampleModalLongTitle"><i class="fa-solid fa-route text-dark"></i>&nbsp;Trip Path</h5>
+        <button type="button" class="close bg-dark text-light" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-       <span class="text-primary">Start</span>
-        <i class="fas fa-map-marker-alt bg-indigo">--------</i>
-        <span class="text-primary">End</span>
+       <span class="text-dark">Start :</span>
+       <span class="text-primary">{{$item->city_from->city_name}}</span>
+       <br>
+       <i class="fa-solid fa-location-dot text-primary"></i><span class="text-dark">reg1</span>&nbsp;
+       <i class="fa-solid fa-location-dot text-primary"></i><span class="text-dark">reg2</span>&nbsp;
+       <i class="fa-solid fa-location-dot text-primary"></i><span class="text-dark">reg3</span>&nbsp;
+        <br>
+       <span class="text-dark">End : </span>
+      <span class="text-primary">{{$item->city_to->city_name}}</span>
       </div>
-      <div class="modal-footer">
+      {{-- <div class="modal-footer">
         <button type="button" class="btn btn-outline-primary" data-dismiss="modal" class="close">Close</button>
-      </div>
+      </div> --}}
     </div>
   </div>
 </div>
