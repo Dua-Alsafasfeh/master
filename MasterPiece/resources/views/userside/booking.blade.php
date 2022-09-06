@@ -56,7 +56,12 @@ Booking
                          <form action="{{route('storeBokking' , $trip->id)}}" method="post">
                             @csrf
                         <td>
-                            <input type="number" name="number" required>
+                            <input type="number" name="number" class="@error('number') is-invalid @enderror">
+                            @error('number')
+                            <span class="invalid-feedback" role="alert">
+                                <p>{{ $message }}</p>
+                            </span>
+                            @enderror
                         </td>
                         <td>
                             <button type="submit" class="btn btn-outline-primary">Choose</button>

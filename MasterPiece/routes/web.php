@@ -25,7 +25,7 @@ use App\Http\Controllers\HomeController;
 // });
 
 
-Route::controller(App\Http\Controllers\BusStationController::class)->group(function ()
+Route::controller(BusStationController::class)->group(function ()
 {
     Route::get('/', 'viewHome');
     Route::get('/schedule', 'viewSchedule');
@@ -35,7 +35,7 @@ Route::controller(App\Http\Controllers\BusStationController::class)->group(funct
     // Route::get('/Register', 'viewRegister');
     // Route::get('/Login', 'viewLogin');
     Route::get('/booking', 'viewBooking')->name("booking");
-    Route::post('/booking/{trip}', 'storeBokking')->name("storeBokking")->middleware("auth");
+    Route::post('/ticket/{trip}', 'storeBokking')->name("storeBokking")->middleware("auth");
     Route::get('/ticket', 'viewTicket');
     Route::post('/storepayment', 'storePayment');
 });

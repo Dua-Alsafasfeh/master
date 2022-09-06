@@ -71,7 +71,7 @@ Schedule
     <td >{{$item->driver->phone_number}}</td>
     <td >{{$item->price}}</td>
     <td >{{$item->bus->size}}</td>
-    <td ><button type="button" class="btn btn-outline-primary" onclick="showpath({{$item}})">Show</button></td> 
+    <td ><button type="button" class="btn btn-outline-primary" id="showbtn">Show</button></td> 
   </tr>
 @endforeach
 </tbody>
@@ -80,36 +80,59 @@ Schedule
 </div>
 </div>
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+{{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
   Launch demo modal
-</button>
+</button> --}}
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" style="background-color: rgba(0,0,0,0.6)"   aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Trip Path</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          {{-- <span aria-hidden="true">&times;</span> --}}
+          <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-       <span class="bg-primary">Start</span>
+       <span class="text-primary">Start</span>
         <i class="fas fa-map-marker-alt bg-indigo">--------</i>
-        <span class="bg-primary">End</span>
+        <span class="text-primary">End</span>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-outline-primary" data-dismiss="modal" class="close">Close</button>
       </div>
     </div>
   </div>
 </div>
 <!-- schedule End -->
 
-<script>
-  function showpath(object){
-    console.log(object)
-  }
-  </script>
+
+  <script>
+    // Get the modal
+    var modal = document.getElementById("exampleModalCenter");
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("showbtn");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";     
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
 @endsection

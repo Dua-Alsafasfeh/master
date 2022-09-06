@@ -129,12 +129,14 @@ Ticket
                         {{-- <p class="h8 py-3">Payment Details</p> --}}
                         <div class="row gx-3">
                             <form action="/storepayment" method="POST">
-                                @csrf
-                                
+                            @csrf
+                            <input type="hidden" value="{{$trip->price * $number}}" name="price">
+                            <input type="hidden" value="{{$trip->id}}" name="trip_id">
+
                             <div class="col-12">
                                 <div class="d-flex flex-column">
                                     <p class="text mb-1">Person Name</p>
-                                    <input class="form-control mb-3" type="text" placeholder="Name" name="person_name" value="{{old('person_name')}}" required @error('person_name') is-invalid @enderror>
+                                    <input class="form-control mb-3" type="text" placeholder="Name" name="person_name" value="{{old('person_name')}}" @error('person_name') is-invalid @enderror>
 
                                     @error('person_name')
                                         <span class="invalid-feedback" role="alert">
@@ -146,7 +148,7 @@ Ticket
                             <div class="col-12">
                                 <div class="d-flex flex-column">
                                     <p class="text mb-1">Card Number</p>
-                                    <input class="form-control mb-3" type="text" name="card_num" value="{{old('card_num')}}" placeholder="1234 5678 435678" required @error('card_num') is-invalid @enderror>
+                                    <input class="form-control mb-3" type="text" name="card_num" value="{{old('card_num')}}" placeholder="1234 5678 435678"  @error('card_num') is-invalid @enderror>
 
                                     @error('card_num')
                                         <span class="invalid-feedback" role="alert">
@@ -158,7 +160,7 @@ Ticket
                             <div class="col-12">
                                 <div class="d-flex flex-column">
                                     <p class="text mb-1">Expiry</p>
-                                    <input class="form-control mb-3" type="date" name="expiry"  placeholder="DD/MM/YYYY" min="2022-09-0" value="{{old('expiry')}}" required @error('expiry') is-invalid @enderror>
+                                    <input class="form-control mb-3" type="date" name="expiry"  placeholder="DD/MM/YYYY" min="2022-09-0" value="{{old('expiry')}}"  @error('expiry') is-invalid @enderror>
 
                                     @error('expiry')
                                         <span class="invalid-feedback" role="alert">
@@ -170,9 +172,7 @@ Ticket
                             <div class="col-12">
                                 <div class="d-flex flex-column">
                                     <p class="text mb-1">CVV/CVC</p>
-                                    <input type="hidden" value="{{$trip->price * $number}}" name="price">
-                                    <input type="hidden" value="{{$trip->id}}" name="trip_id">
-                                    <input class="form-control mb-3 pt-2 " type="password" name="cvv" value="{{old('cvv')}}" placeholder="***" required @error('cvv') is-invalid @enderror>
+                                    <input class="form-control mb-3 pt-2 " type="password" name="cvv" value="{{old('cvv')}}" placeholder="***"  @error('cvv') is-invalid @enderror>
 
                                     @error('cvv')
                                         <span class="invalid-feedback" role="alert">
@@ -188,7 +188,7 @@ Ticket
                                     </button>
                                 </div>
                                 <div class="col-6">
-                                    <button type="submit" class="btn btn-primary btn-block mx-2">
+                                    <button type="" class="btn btn-primary btn-block mx-2">
                                         Cancel Booking
                                     </button>
                                 </div>

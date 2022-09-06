@@ -52,7 +52,7 @@ class BusStationController extends Controller
     // store booking details
     public function  storeBokking(Request $request , Trip $trip ){
         $request->validate([
-            "number" => "required"
+            "number" => "required|numeric|min:1|not_in:0"
         ]);
 
         // for($i = 0 ; $i < $request->number ; $i++){
@@ -80,7 +80,7 @@ class BusStationController extends Controller
         $request->validate([
             'person_name' =>'required|string|max:255',
             'card_num' => 'required|max:16',
-            'expiry' =>'required',
+            'expiry' =>'required|after:today',
             'cvv' => 'required|integer|max:3'
         ]);
 
@@ -89,12 +89,12 @@ class BusStationController extends Controller
         $payment->card_num = $request->input('card_num');
         $payment->expiry = $request->input('expiry');
         $payment->cvv = $request->input('cvv');
-        $payment->user_id = Auth()->id();
+        $payment->user_id = Auth::user()->id;
+        
         // $payment->trip_id = $trip_id;
         $payment->total_price = $request->input('price');
         $payment->trip_id= $request->input('trip_id');
         $payment->save();
         return redirect()->back()->with('status','Trip has been Confirmed, and Payment completed successfully');
-        // return view('/');
     }
 }
