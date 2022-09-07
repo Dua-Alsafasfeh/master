@@ -85,21 +85,27 @@ Schedule
   <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle"><i class="fa-solid fa-route text-dark"></i>&nbsp;Trip Path</h5>
+        <h4 class="modal-title" id="exampleModalLongTitle"><i class="fa-solid fa-route text-dark"></i>&nbsp;Trip Path</h4>
         <button type="button" class="close bg-dark text-light" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-       <span class="text-dark">Start :</span>
-       <span class="text-primary">{{$item->city_from->city_name}}</span>
+       
+       <span class="text-dark h5"> 
+       <i class="fa-solid fa-road text-dark"></i>
+       &nbsp;Start :</span>
+       <span class="text-primary h5">{{$item->city_from->city_name}}</span>
        <br>
-       <i class="fa-solid fa-location-dot text-primary"></i><span class="text-dark">reg1</span>&nbsp;
-       <i class="fa-solid fa-location-dot text-primary"></i><span class="text-dark">reg2</span>&nbsp;
-       <i class="fa-solid fa-location-dot text-primary"></i><span class="text-dark">reg3</span>&nbsp;
+       <i class="fa-solid fa-location-dot text-primary"></i>&nbsp;
+       <span class="text-dark h5">{{$item->path}}</span>
+       &nbsp;<i class="fa-solid fa-location-dot text-primary"></i>
         <br>
-       <span class="text-dark">End : </span>
-      <span class="text-primary">{{$item->city_to->city_name}}</span>
+       <span class="text-dark h5">
+        <i class="fa-solid fa-road-circle-check text-dark"></i>
+        &nbsp;End : 
+      </span>
+      <span class="text-primary h5">{{$item->city_to->city_name}}</span>
       </div>
       {{-- <div class="modal-footer">
         <button type="button" class="btn btn-outline-primary" data-dismiss="modal" class="close">Close</button>

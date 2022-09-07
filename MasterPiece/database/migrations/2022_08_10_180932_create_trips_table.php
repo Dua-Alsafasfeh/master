@@ -22,6 +22,7 @@ class CreateTripsTable extends Migration
             $table->date("date");
             $table->time("time");
             $table->double("price")->default(1);
+            $table->string('path');
             $table->timestamps();
         });
     }
