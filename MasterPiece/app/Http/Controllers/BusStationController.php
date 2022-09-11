@@ -52,7 +52,7 @@ class BusStationController extends Controller
     // store booking details
     public function  storeBokking(Request $request , Trip $trip ){
         $request->validate([
-            "number" => "required|numeric|min:1|not_in:0"
+            "number" => "required|numeric|min:1|not_in:0|max:5"
         ]);
 
         // for($i = 0 ; $i < $request->number ; $i++){
