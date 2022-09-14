@@ -8,6 +8,7 @@ use App\Models\Payment;
 use App\Models\TripBooking;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class BusStationController extends Controller
 {
@@ -55,26 +56,24 @@ class BusStationController extends Controller
             "number" => "required|numeric|min:1|not_in:0|max:5"
         ]);
 
-        // for($i = 0 ; $i < $request->number ; $i++){
-        //     $trip_booking = new TripBooking();
-        //     $trip_booking->trip_id = $trip->id;
-        //     $trip_booking->user_id = auth()->id();
-        //     $trip_booking->save();
-        // }
+        for($i = 0 ; $i < $request->number ; $i++){
+            $trip_booking = new TripBooking();
+            $trip_booking->trip_id = $trip->id;
+            $trip_booking->user_id = auth()->id();
+            $trip_booking->save();
+        }
         // $user_id=Auth::user()->id;
         // return back();
         $number = $request->get("number");
 
-        return view('userside.ticket' , compact('trip' , 'number'));
+        return view('userside.payment' , compact('trip' , 'number'));
 
     }
 
-    // ticket page
-    public function viewTicket(){
-
-        return view('userside.ticket');
+    //payment page
+    public function viewPayment(){
+        return view('userside.payment');
     }
-
     //payment section
     public function storePayment(Request $request){
         $request->validate([
@@ -95,6 +94,12 @@ class BusStationController extends Controller
         $payment->total_price = $request->input('price');
         $payment->trip_id= $request->input('trip_id');
         $payment->save();
-        return redirect()->back()->with('status','Trip has been Confirmed, and Payment completed successfully');
+        DB::update('UPDATE trip_bookings set is_payment = 1 where id = ?', ['trip_id','user_id']);
+        return redirect()->back()->with('status','Trip has been Confirmed, and Payment completed successfully.Please print your TICKET');
     }
+      // ticket page
+      public function viewTicket(){
+        return view('userside.ticket');
+    }
+
 }

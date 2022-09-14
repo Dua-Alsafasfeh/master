@@ -64,7 +64,7 @@ Booking
                             @enderror
                         </td>
                         <td>
-                            <button type="submit" class="btn btn-outline-primary">Choose</button>
+                            <button type="submit" class="btn btn-outline-primary">Book Now</button>
                         </td>
                         </form>
                     </tr>

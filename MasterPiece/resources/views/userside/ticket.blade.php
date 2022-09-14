@@ -22,13 +22,6 @@ Ticket
 <!-- Navbar End -->
 
 <!-- start ticket-booking -->
-<div class="container  text-dark px-3 mt-3">
-    @if (session('status'))
-        <div class="alert alert-primary" role="alert">
-            {{ session('status') }}
-        </div>
-    @endif
-</div>
 <div class="container-fluid wow fadeInUp mt-5" data-wow-delay="0.1s">
     <div class="container">
     <div class="row justify-content-center">
@@ -108,107 +101,7 @@ Ticket
     </div>
     </div>
 </div>
-
 <!-- end ticket-booking -->
 {{$trip->id}}
 {{$number}}
-{{-- -----payment start---- --}}
-<div class="container-fluid wow fadeInUp mt-5" data-wow-delay="0.1s">
-    <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-sm-12 col-lg-8">
-            <div class="cardpay bg-dark-lighter text-white mt-3">
-                <div class="card-header bg-dark d-flex">                   
-                    <h4 class="m-0">
-                        <i class="fa-regular fa-credit-card"></i>
-                     Paymet Information
-                    </h4>
-                </div>
-                <div class="container p-0 mt-3">
-                    <div class="cardpay px-4">
-                        {{-- <p class="h8 py-3">Payment Details</p> --}}
-                        <div class="row gx-3">
-                            <form action="/storepayment" method="POST">
-                            @csrf
-                            <input type="hidden" value="{{$trip->price * $number}}" name="price">
-                            <input type="hidden" value="{{$trip->id}}" name="trip_id">
-
-                            <div class="col-12">
-                                <div class="d-flex flex-column">
-                                    <p class="text mb-1">Person Name</p>
-                                    <input class="form-control mb-3" type="text" placeholder="Name" name="person_name" value="{{old('person_name')}}" @error('person_name') is-invalid @enderror>
-
-                                    @error('person_name')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="d-flex flex-column">
-                                    <p class="text mb-1">Card Number</p>
-                                    <input class="form-control mb-3" type="text" name="card_num" value="{{old('card_num')}}" placeholder="1234 5678 435678"  @error('card_num') is-invalid @enderror>
-
-                                    @error('card_num')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="d-flex flex-column">
-                                    <p class="text mb-1">Expiry</p>
-                                    <input class="form-control mb-3" type="date" name="expiry"  placeholder="DD/MM/YYYY" min="2022-09-0" value="{{old('expiry')}}"  @error('expiry') is-invalid @enderror>
-
-                                    @error('expiry')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="d-flex flex-column">
-                                    <p class="text mb-1">CVV/CVC</p>
-                                    <input class="form-control mb-3 pt-2 " type="password" name="cvv" value="{{old('cvv')}}" placeholder="***"  @error('cvv') is-invalid @enderror>
-
-                                    @error('cvv')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="form-group mt-3 mb-2 d-flex justify-content-center">
-                                <div class="col-6">
-                                    <button type="submit" class="btn btn-primary btn-block">
-                                        Confirm Booking
-                                    </button>
-                                </div>
-                                <div class="col-6">
-                                    <button type="" class="btn btn-primary btn-block mx-2">
-                                        Cancel Booking
-                                    </button>
-                                </div>
-                            </div>
-                            {{-- <div class="col-12">
-                                <div class="btn btn-primary mb-3">
-                                    <span class="ps-3">Pay $243</span>
-                                    <span class="fas fa-arrow-right"></span>
-                                </div>
-                            </div> --}}
-                        </form>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card-footer bg-dark"></div>
-            </div>
-        </div>
-    </div>
-    </div>
-</div>
-{{-- -----payment end---- --}}
 @endsection

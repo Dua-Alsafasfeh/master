@@ -50,27 +50,6 @@ Home
 <!-- </div> -->
 <!-- Navbar & Carousel End -->
 
-
-<!-- Full Screen Search Start -->
-<div class="modal fade" id="searchModal" tabindex="-1">
-    <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
-            <div class="modal-header border-0">
-                <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal"
-                    aria-label="Close"></button>
-            </div>
-            <div class="modal-body d-flex align-items-center justify-content-center">
-                <div class="input-group" style="max-width: 600px;">
-                    <input type="text" class="form-control bg-transparent border-primary p-3"
-                        placeholder="Type search keyword">
-                    <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Full Screen Search End -->
-
 <!-- start Booking -->
 <div class="container  text-dark px-3 mt-3">
     @if (session('city_error'))
@@ -139,7 +118,7 @@ Home
                             <div class="book_tabel_item">
                                 <div class="form-group">
                                     <div class='input-group date' id='datetimepicker11'>
-                                        <button type="submit" class="mx-4 mt-4 book_now_btn button_hover">Book Now</button>
+                                        <button type="submit" class="mx-4 mt-4 book_now_btn button_hover">Choose</button>
                                     </div>
                                 </div>
                             </div>
@@ -238,7 +217,7 @@ Home
                             </div>
                             <h5 class="mb-0">Choose a Trip</h5>
                         </div>
-                        <span>2. Choose the Trip you want; City-From and City-To, then click on <strong>BOOK Now.</strong></span>
+                        <span>2. Choose the Trip you want; City-From and City-To, then click on <strong>Choose</strong>.</span>
                     </div>
                     <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
                         <div class="d-flex align-items-center mb-3">
@@ -247,7 +226,7 @@ Home
                             </div>
                             <h5 class="mb-0">Choose a Trip Details</h5>
                         </div>
-                        <span>3. Choose a Trip's time, date and number of seats, then click on <strong>choose</strong>.</span>
+                        <span>3. Choose a Trip's time, date and number of seats, then click on <strong>Book Now</strong>.</span>
                     </div>
                     <div class="col-sm-6 wow fadeIn" data-wow-delay="0.4s">
                         <div class="d-flex align-items-center mb-3">
@@ -256,7 +235,7 @@ Home
                             </div>
                             <h5 class="mb-0">Insert Payment Details</h5>
                         </div>
-                        <span>4. Insert credit card details to pay for a trip then click on <strong>confirm booking</strong>.</span>
+                        <span>4. Insert credit card details to pay for a trip then click on <strong>Pay Now</strong>. Finally you must Print Your TICKET.</span>
                     </div>
                 </div>
             </div>
