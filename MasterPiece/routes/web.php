@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\HomeController;
+use TCG\Voyager\Facades\Voyager;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,3 +50,9 @@ Route::put('/editprofile/{id}', [HomeController::class,'editProfile']);
 // Route::put('/editpassword/{id}', [HomeController::class,'editPassword']);
 
 Route::post('/send-message',[ContactController::class,'sendEmail'])->name('contactsend');
+
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
