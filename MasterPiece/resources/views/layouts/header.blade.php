@@ -49,7 +49,7 @@
         <div class="row gx-0">
             <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Aqaba, Jordan</small>
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Jordan</small>
                     <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+777 777 777</small>
                     <small class="text-light"><i class="fa fa-envelope-open me-2"></i>bus_station@gmail.com</small>
                 </div>
