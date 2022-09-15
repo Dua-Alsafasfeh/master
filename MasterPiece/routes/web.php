@@ -53,6 +53,7 @@ Route::post('/send-message',[ContactController::class,'sendEmail'])->name('conta
 
 
 
+
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
