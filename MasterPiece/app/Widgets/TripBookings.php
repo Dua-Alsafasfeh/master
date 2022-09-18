@@ -26,7 +26,7 @@ class TripBookings extends AbstractWidget
         $string = 'Trip Bookings';
 
         return view('voyager::dimmer', array_merge($this->config, [
-            'icon'   => 'voyager-credit-cards',
+            'icon'   => 'voyager-ticket',
             'title'  => "{$count} {$string}",
             'text'   => __('voyager::dimmer.post_text', ['count' => $count, 'string' => Str::lower($string)]),
             'button' => [
