@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class payment extends Model
+class Payment extends Model
 {
     use HasFactory;
     protected $table = 'payments';
@@ -14,7 +14,7 @@ class payment extends Model
         'card_num',
         'expiry',
         'cvv',
-        'trip_id',
+        'trip_bookings_id',
         'user_id',
         'total_price',
     ];

@@ -65,7 +65,6 @@ class BusStationController extends Controller
         // $user_id=Auth::user()->id;
         // return back();
         $number = $request->get("number");
-
         return view('userside.payment' , compact('trip' , 'number'));
 
     }
@@ -75,31 +74,47 @@ class BusStationController extends Controller
         return view('userside.payment');
     }
     //payment section
-    public function storePayment(Request $request){
-        $request->validate([
-            'person_name' =>'required|string|max:255',
-            'card_num' => 'required|max:16',
-            'expiry' =>'required|after:today',
-            'cvv' => 'required|integer|max:3'
-        ]);
-
+    public function storePayment(Request $request , TripBooking $tripBooking,Trip $trip ){
+        // $request->validate([
+        //     "person_name" => "required|string|max:255",
+        //     "card_num" => "required|max:16",
+        //     "expiry" => "required|after:today",
+        //     "cvv" => "required|integer|max:3"
+        // ]);
         $payment = new Payment;
         $payment->person_name = $request->input('person_name');
         $payment->card_num = $request->input('card_num');
         $payment->expiry = $request->input('expiry');
         $payment->cvv = $request->input('cvv');
         $payment->user_id = Auth::user()->id;
-        
-        // $payment->trip_id = $trip_id;
         $payment->total_price = $request->input('price');
-        $payment->trip_id= $request->input('trip_id');
+        $payment->trip_bookings_id= 5;
+            // dd($payment);
         $payment->save();
-        DB::update('UPDATE trip_bookings set is_payment = 1 where id = ?', ['trip_id','user_id']);
-        return redirect()->back()->with('status','Trip has been Confirmed, and Payment completed successfully.Please print your TICKET');
+        DB::update('UPDATE trip_bookings set is_payment = 1 WHERE id=?', [5]);
+        // return back()->with('status','Trip has been Confirmed, and Payment completed successfully.Please print your TICKET');
+
+        $city_from =$request->input('city_from');
+        $city_to =$request->input('city_to');
+        $trip_date =$request->input('trip_date');
+        $trip_time =$request->input('trip_time');
+        $price=$request->input('price');
+        $number=$request->input('number');
+        return view('userside.ticket' , compact('city_from','city_to','trip_date','trip_time','price','number'));
     }
       // ticket page
       public function viewTicket(){
         return view('userside.ticket');
+    }
+      //un paid ticket page
+      public function viewTicket_unpaid(Request $request){
+        $city_from =$request->input('city_from');
+        $city_to =$request->input('city_to');
+        $trip_date =$request->input('trip_date');
+        $trip_time =$request->input('trip_time');
+        $price=$request->input('price');
+        $number=$request->input('number');
+        return view('userside.ticket' , compact('city_from','city_to','trip_date','trip_time','price','number'));
     }
 
 }

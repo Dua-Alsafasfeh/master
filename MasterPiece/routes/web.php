@@ -37,7 +37,8 @@ Route::controller(BusStationController::class)->group(function ()
     // Route::get('/Login', 'viewLogin');
     Route::get('/booking', 'viewBooking')->name("booking");
     Route::post('/payment/{trip}', 'storeBokking')->name("storeBokking")->middleware("auth");
-    Route::get('/ticket', 'viewTicket');
+    Route::get('/ticket', 'viewTicket')->name("ticket");
+    Route::post('/ticket', 'viewTicket_unpaid')->name("unpaidTicket");
     Route::get('/payment','viewPayment');
     Route::post('/storepayment', 'storePayment')->name("payment.details");
 });

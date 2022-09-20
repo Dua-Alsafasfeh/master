@@ -234,6 +234,7 @@ profile
                                 <th scope="col"class="text-dark">Date</th>
                                 <th scope="col"class="text-dark">Time</th>
                                 <th scope="col"class="text-dark">Number of Seats</th>
+                                <th scope="col"class="text-dark">Cost</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -242,17 +243,7 @@ profile
                                 <td>20/10/2022</td>
                                 <td>10:00 AM</td>
                                 <td>3</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                              </tr>
-                              <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
+                                <td>10</td>
                               </tr>
                             </tbody>
                           </table>

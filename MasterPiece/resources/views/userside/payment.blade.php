@@ -31,9 +31,23 @@ Payment
 </div>
 {{$trip->id}}
 {{$number}}
+{{$trip->city_to->city_name}}
+{{ $trip->time }}
+{{ $trip->date }}
 <div class="ml-auto d-flex justify-content-center">
     <div class="btn btn-dark" id="ticket">
-        <span class=""><a href="/ticket" >View ticket</a></span>
+        <form action="{{route('unpaidTicket')}}" method="post">
+            @csrf
+            <input type="hidden" value="{{$trip->price * $number}}" name="price">
+            <input type="hidden" value="{{$trip->city_from->city_name}}" name="city_from">
+            <input type="hidden" value="{{$trip->city_to->city_name}}" name="city_to">
+            <input type="hidden" value="{{ $trip->date }}" name="trip_date">
+            <input type="hidden" value="{{ $trip->time }}" name="trip_time">
+            <input type="hidden" value="{{ $number }}" name="number">
+        <span class="">
+            <button type="submit" class="btn btn-primary">View Ticket</button>
+        </span>
+        </form>
     </div>
 </div>
 <div class="container-fluid wow fadeInUp mt-3" data-wow-delay="0.1s">
@@ -54,7 +68,11 @@ Payment
                             <form action="{{route('payment.details')}}" method="POST">
                             @csrf
                             <input type="hidden" value="{{$trip->price * $number}}" name="price">
-                            <input type="hidden" value="{{$trip->id}}" name="trip_id">
+                            <input type="hidden" value="{{$trip->city_from->city_name}}" name="city_from">
+                            <input type="hidden" value="{{$trip->city_to->city_name}}" name="city_to">
+                            <input type="hidden" value="{{ $trip->date }}" name="trip_date">
+                            <input type="hidden" value="{{ $trip->time }}" name="trip_time">
+                            <input type="hidden" value="{{ $number }}" name="number">
 
                             <div class="col-12">
                                 <div class="d-flex flex-column">

@@ -17,7 +17,7 @@ class CreateBusesTable extends Migration
             $table->id();
             $table->string("type");
             $table->string("number");
-            $table->integer("size")->default(50);
+            $table->integer("size")->unsigned()->default(50);
             $table->timestamps();
         });
     }

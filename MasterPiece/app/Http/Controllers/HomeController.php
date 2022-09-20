@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Trip;
 
 class HomeController extends Controller
 {
@@ -40,12 +41,9 @@ class HomeController extends Controller
 
     }
 
-    //booking history
-    // public function bookingHistory(){
-    //     $history = DB::table('trip_bookings')
-    //     ->join('trips','trip_bookings.trip_id','=','trips.id')
-    //     ->join('users','trip_bookings.user_id','=','users.id')
-    //     ->select('trip_bookings.*',)
-
-    // }
+    // booking history
+    public function bookingHistory(){
+       
+        return view('profile' , compact('history'));
+    }
 }
