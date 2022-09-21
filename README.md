@@ -18,18 +18,20 @@ Technologies Used:
 1. PHP
 1. Laravel
 
-create a Bus Reservation System.
+Create a Bus Reservation System.
 
 ## Project Overview
 
  Bus reservation system is a mobile or web software solution designed to provide customers with a personalized easy-to-utilize user experience for booking and purchasing tickets online.
 
 # Database Tables:
+1. [users] 
 1. [cities] 
 1. [buses] 
 1. [drivers] 
 1. [trips] 
 1. [trip_bookings]
+1. [payment]
 
 ## Important Links
 
