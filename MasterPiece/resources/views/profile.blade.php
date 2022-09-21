@@ -210,7 +210,7 @@ profile
     </div>
     </div>
 </div>
-{{---------- profile end------ --}}
+{{---------- profile end ---------}}
 
 {{-- ----booking history start------ --}}
 <div class="container-fluid wow fadeInUp mt-5" data-wow-delay="0.1s" >
@@ -238,13 +238,15 @@ profile
                               </tr>
                             </thead>
                             <tbody>
+                              @foreach ($history as $item)
                               <tr>
-                                <th scope="row">Amman-Aqaba</th>
-                                <td>20/10/2022</td>
-                                <td>10:00 AM</td>
-                                <td>3</td>
-                                <td>10</td>
+                                <th scope="row">{{$item->trip->city_from->city_name}} - {{$item->trip->city_to->city_name}}</th>
+                                <td>{{$item->trip->date}}</td>
+                                <td>{{$item->trip->time}}</td>
+                                <td>{{$item->num_of_seats}}</td>
+                                <td>{{$item->total_cost}}</td>
                               </tr>
+                              @endforeach
                             </tbody>
                           </table>
                         {{-- <div class="col-sm-12 col-md-5 col-xl-4 mb-4">

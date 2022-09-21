@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Trip;
+use App\Models\TripBooking;
 
 class HomeController extends Controller
 {
@@ -27,7 +28,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('/profile');
+        // $history = DB::table('trip_bookings')->where('user_id',Auth()->user()->id)->get();
+        $history = TripBooking::with(['trip'])->where('user_id',Auth()->user()->id)->get();
+        return view('/profile', compact('history'));
     }
 
     // edit profile 
@@ -38,12 +41,6 @@ class HomeController extends Controller
         $user->phone = $request->input('phone');
         $user->update();
         return redirect('/profile')->with('status','Information Updated Successfully');
-
     }
 
-    // booking history
-    public function bookingHistory(){
-       
-        return view('profile' , compact('history'));
-    }
 }

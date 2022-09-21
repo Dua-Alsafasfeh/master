@@ -58,6 +58,13 @@ Home
         </div>
     @endif
 </div>
+<div class="container  text-dark px-3 mt-3">
+    @if (session('deleteBooking'))
+        <div class="alert alert-primary" role="alert">
+            {{ session('deleteBooking') }}
+        </div>
+    @endif
+</div>
 <div class="container-fluid py-4 wow fadeInUp" data-wow-delay="0.1s">
 <div class="hotel_booking_area position">
     <div class="container-fluid">

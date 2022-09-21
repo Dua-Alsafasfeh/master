@@ -117,7 +117,7 @@ Ticket
                                         <div class="form-group m-2">
                                             <i class="fa-solid fa-money-check-dollar text-dark"></i>
                                             <span class="text-dark h5">Is Paid?</span>
-                                            <span class="text-dark">-------</span>
+                                            <span class="text-dark">{{$is_paid}}</span>
                                         </div>
 
                                         {{-- <div class="form-group mt-4 d-flex justify-content-center">

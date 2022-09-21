@@ -29,14 +29,15 @@ Payment
         </div>
     @endif
 </div>
-{{$trip->id}}
+{{-- {{$trip->id}}
 {{$number}}
 {{$trip->city_to->city_name}}
 {{ $trip->time }}
 {{ $trip->date }}
+{{$trip_booking->id}} --}}
 <div class="ml-auto d-flex justify-content-center">
-    <div class="btn btn-dark" id="ticket">
-        <form action="{{route('unpaidTicket')}}" method="post">
+    <div class="btn btn-dark m-3" id="ticket">
+        <form action="{{route('unpaidTicket',$trip_booking->id)}}" method="post">
             @csrf
             <input type="hidden" value="{{$trip->price * $number}}" name="price">
             <input type="hidden" value="{{$trip->city_from->city_name}}" name="city_from">
@@ -47,10 +48,19 @@ Payment
         <span class="">
             <button type="submit" class="btn btn-primary">View Ticket</button>
         </span>
-        </form>
+        </form>      
+    </div>
+    <div class="btn btn-dark m-3">
+        <form action="{{route('cancelBooking',$trip_booking->id)}}" method="post">
+            @csrf
+            @method('delete')
+        <span class="">
+            <button type="submit" class="btn btn-primary">Cancel Booking</button>
+        </span>
+         </form>      
     </div>
 </div>
-<div class="container-fluid wow fadeInUp mt-3" data-wow-delay="0.1s">
+<div class="container-fluid wow fadeInUp" data-wow-delay="0.1s">
     <div class="container">
     <div class="row justify-content-center">
         <div class="col-sm-12 col-lg-8">
@@ -65,7 +75,7 @@ Payment
                     <div class="cardpay px-4">
                         {{-- <p class="h8 py-3">Payment Details</p> --}}
                         <div class="row gx-3">
-                            <form action="{{route('payment.details')}}" method="POST">
+                            <form action="{{route('payment.details',$trip_booking->id)}}" method="POST">
                             @csrf
                             <input type="hidden" value="{{$trip->price * $number}}" name="price">
                             <input type="hidden" value="{{$trip->city_from->city_name}}" name="city_from">
@@ -130,16 +140,6 @@ Payment
                                     </button>
                                 </div>                              
                             </div>
-                        </form>
-                        <form action="" method="">
-                            @csrf
-                                <div class="form-group mt-3 mb-2 d-flex justify-content-center">
-                                <div class="col-12">
-                                    <button type="" class="btn btn-primary btn-block w-100">
-                                            Cancel Booking
-                                    </button>
-                                </div>
-                                </div>
                         </form>
                         </div>
                     </div>

@@ -17,6 +17,8 @@ class CreateTripBookingsTable extends Migration
             $table->id();
             $table->foreignId("trip_id")->constrained()->onDelete("cascade");
             $table->foreignId("user_id")->constrained()->onDelete("cascade");
+            $table->integer("num_of_seats");
+            $table->double("total_cost");
             $table->tinyInteger('is_payment')->default(0);
             $table->timestamps();
         });

@@ -29,7 +29,7 @@ use TCG\Voyager\Facades\Voyager;
 Route::controller(BusStationController::class)->group(function ()
 {
     Route::get('/', 'viewHome');
-    Route::get('/schedule', 'viewSchedule');
+    // Route::get('/schedule', 'viewSchedule');
     Route::get('/about', 'viewAbout')->name('about');
     Route::get('/contact', 'viewContact');
     Route::get('/gallery', 'viewGallery');
@@ -38,9 +38,10 @@ Route::controller(BusStationController::class)->group(function ()
     Route::get('/booking', 'viewBooking')->name("booking");
     Route::post('/payment/{trip}', 'storeBokking')->name("storeBokking")->middleware("auth");
     Route::get('/ticket', 'viewTicket')->name("ticket");
-    Route::post('/ticket', 'viewTicket_unpaid')->name("unpaidTicket");
-    Route::get('/payment','viewPayment');
-    Route::post('/storepayment', 'storePayment')->name("payment.details");
+    Route::post('/ticket/{tripBooking}', 'viewTicket_unpaid')->name("unpaidTicket");
+    // Route::get('/payment','viewPayment');
+    Route::post('/storepayment/{tripBooking}', 'storePayment')->name("payment.details");
+    Route::delete('/deleteBooking/{tripBooking}', 'deleteBooking')->name("cancelBooking");
 });
 Auth::routes();
 
@@ -51,8 +52,6 @@ Route::put('/editprofile/{id}', [HomeController::class,'editProfile']);
 // Route::put('/editpassword/{id}', [HomeController::class,'editPassword']);
 
 Route::post('/send-message',[ContactController::class,'sendEmail'])->name('contactsend');
-
-
 
 
 Route::group(['prefix' => 'admin'], function () {
