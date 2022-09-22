@@ -38,7 +38,7 @@ Route::controller(BusStationController::class)->group(function ()
     Route::get('/booking', 'viewBooking')->name("booking");
     Route::post('/payment/{trip}', 'storeBokking')->name("storeBokking")->middleware("auth");
     Route::get('/ticket', 'viewTicket')->name("ticket");
-    Route::post('/ticket/{tripBooking}', 'viewTicket_unpaid')->name("unpaidTicket");
+    Route::post('/ticket/tripID/{trip_id}/tripBookingID/{tripBooking}', 'viewTicket_unpaid')->name("unpaidTicket");
     // Route::get('/payment','viewPayment');
     Route::post('/storepayment/{tripBooking}', 'storePayment')->name("payment.details");
     Route::delete('/deleteBooking/{tripBooking}', 'deleteBooking')->name("cancelBooking");

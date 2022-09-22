@@ -37,7 +37,7 @@ Payment
 {{$trip_booking->id}} --}}
 <div class="ml-auto d-flex justify-content-center">
     <div class="btn btn-dark m-3" id="ticket">
-        <form action="{{route('unpaidTicket',$trip_booking->id)}}" method="post">
+        <form action="{{route('unpaidTicket',[$trip->id,$trip_booking->id])}}" method="post">
             @csrf
             <input type="hidden" value="{{$trip->price * $number}}" name="price">
             <input type="hidden" value="{{$trip->city_from->city_name}}" name="city_from">
