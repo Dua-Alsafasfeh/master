@@ -20,7 +20,13 @@ Booking
     </div>
 </div>
 <!-- Navbar End -->
-
+<div class="container  text-dark px-3 mt-3">
+    @if (session('no available seat'))
+        <div class="alert alert-danger" role="alert">
+            {{ session('no available seat') }}
+        </div>
+    @endif
+</div>
 <!-- start booking -->
 <div class="container mt-5">
     <div class="h3 text-dark"><i class="fa-solid fa-circle-info text-dark"></i>&nbsp;Seats Booking Details</div>
@@ -66,7 +72,7 @@ Booking
                         <td>
                             <button type="submit" class="btn btn-outline-primary">Book Now</button>
                         </td>
-                        </form>
+                         </form>
                     </tr>
                     @endforeach
                 </tbody>

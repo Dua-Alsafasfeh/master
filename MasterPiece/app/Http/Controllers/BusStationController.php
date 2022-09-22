@@ -60,6 +60,10 @@ class BusStationController extends Controller
         $price_of_seat = $trip->price;
         $total_cost =  $number * $price_of_seat;
         // dd($total_cost );
+        // dd(($trip->bus->size)-($trip->tripBookings()->count()), $number);
+        if((($trip->bus->size)-($trip->tripBookings()->count()))< $number){
+            return back()->with('no available seat','Sorry! There are not Seats Available.');
+        }
         for($i = 0 ; $i < $request->number ; $i++){
             $trip_booking = new TripBooking();
             $trip_booking->trip_id = $trip->id;
