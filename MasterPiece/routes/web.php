@@ -33,26 +33,25 @@ Route::controller(BusStationController::class)->group(function ()
     Route::get('/about', 'viewAbout')->name('about');
     Route::get('/contact', 'viewContact');
     Route::get('/gallery', 'viewGallery');
-    // Route::get('/Register', 'viewRegister');
-    // Route::get('/Login', 'viewLogin');
+    
     Route::get('/booking', 'viewBooking')->name("booking");
     Route::post('/payment/{trip}', 'storeBokking')->name("storeBokking")->middleware("auth");
-    Route::get('/ticket', 'viewTicket')->name("ticket");
-    Route::post('/ticket/tripID/{trip_id}/tripBookingID/{tripBooking}', 'viewTicket_unpaid')->name("unpaidTicket");
+    // Route::get('/ticket', 'viewTicket')->name("ticket");
+    Route::get('/ticket/tripID/{trip_id}/tripBookingID/{tripBooking}', 'viewTicket_unpaid')->name("unpaidTicket");
     // Route::get('/payment','viewPayment');
-    Route::post('/storepayment/{tripBooking}', 'storePayment')->name("payment.details");
+    Route::any('/storepayment/tripID/{trip_id}/tripBookingID/{tripBooking}', 'storePayment')->name("payment_details");
     Route::delete('/deleteBooking/{tripBooking}', 'deleteBooking')->name("cancelBooking");
 });
 Auth::routes();
 
 Route::get('/profile', [HomeController::class, 'index'])->name('profile');
 Route::get('/schedule',[ScheduleController::class,'index']);
+// Route::get('/schedule/{path}',[ScheduleController::class,'viewPath'])->name('path');
 
 Route::put('/editprofile/{id}', [HomeController::class,'editProfile']);
 // Route::put('/editpassword/{id}', [HomeController::class,'editPassword']);
 
 Route::post('/send-message',[ContactController::class,'sendEmail'])->name('contactsend');
-
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

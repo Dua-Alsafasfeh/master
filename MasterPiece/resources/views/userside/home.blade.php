@@ -86,7 +86,7 @@ Home
                                         <div class="form-group">
                                         <div class="book_tabel_item">
                                             <div class="input-group">
-                                                <select class="wide" name="from_id" id="select_from" onchange="validationSelect()">
+                                                <select class="wide" name="from_id" id="select_from">
                                                    @foreach($cities as $city)
                                                    <option value="{{$city->id}}">{{$city->city_name}}</option>
                                                    @endforeach
@@ -106,7 +106,7 @@ Home
                                         <div class="form-group">
                                         <div class="book_tabel_item">
                                             <div class="input-group">
-                                                <select class="wide" name="to_id" id="select_to" onchange="validationSelect()">
+                                                <select class="wide" name="to_id" id="select_to">
                                                     @foreach($cities as $city)
                                                     <option value="{{$city->id}}">{{$city->city_name}}</option>
                                                     @endforeach
@@ -256,17 +256,5 @@ Home
     </div>
 </div>
 <!-- booking Plan End -->
-
-
-{{-- <script>
-    function validationSelect(){
-        var from_id = document.getElementById('select_from');
-        var to_id = document.getElementById('select_to');
-
-        if(from_id.value == to_id.value){
-
-        }
-    }
-    </script> --}}
 
 @endsection

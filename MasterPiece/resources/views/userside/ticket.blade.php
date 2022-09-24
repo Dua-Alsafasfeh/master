@@ -79,7 +79,7 @@ Ticket
                             <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
                                 <span data-toggle="pill" role="tab"
                                    class="nav-link active text">
-                                    From : <strong>{{$city_from}}</strong> To : <strong>{{$city_to}}</strong>
+                                    From : <strong>{{$ticket_details->city_from->city_name}}</strong> To : <strong>{{$ticket_details->city_to->city_name}}</strong>
                                 </span>
                             </div>
                         </div>
@@ -97,27 +97,29 @@ Ticket
                                         <div class="form-group m-2">
                                             <i class="fa-solid fa-calendar text-dark"></i>
                                             <span class="text-dark h5">Trip Date :</span>
-                                            <span class="text-dark">{{ $trip_date }}</span>
+                                            <span class="text-dark">{{ $ticket_details->date }}</span>
                                         </div>
                                         <div class="form-group m-2">
                                             <i class="fa-solid fa-clock text-dark"></i>
                                             <span class="text-dark h5">Trip Time :</span>
-                                            <span class="text-dark">{{ $trip_time }}</span>
+                                            <span class="text-dark">{{ $ticket_details->time }}</span>
                                         </div>
                                         <div class="form-group m-2">
                                             <i class="fa-solid fa-arrow-up-1-9 text-dark"></i>
                                             <span class="text-dark h5">Number of Seats :</span>
-                                            <span class="text-dark">{{ $number }}</span>
+                                            <span class="text-dark">{{ $paid->num_of_seats}}</span>
                                         </div>
                                         <div class="form-group m-2">
                                             <i class="fa-solid fa-hand-holding-dollar text-dark"></i>
                                             <span class="text-dark h5">Total Cost :</span>
-                                            <span class="text-dark">{{$price}}</span>
+                                            <span class="text-dark">{{$paid->total_cost}}</span>
                                         </div>
                                         <div class="form-group m-2">
                                             <i class="fa-solid fa-money-check-dollar text-dark"></i>
                                             <span class="text-dark h5">Is Paid?</span>
-                                            <span class="text-dark">{{$is_paid}}</span>
+                                            <span class="text-dark">
+                                                
+                                                {{$paid->is_payment ? "Yes " : "NO"}}</span>
                                         </div>
 
                                         {{-- <div class="form-group mt-4 d-flex justify-content-center">

@@ -21,4 +21,9 @@ class ScheduleController extends Controller
         return view('userside.schedule',compact('schedule'));
     }
     
+    // public function viewPath($id){
+    //     $paths = Trip::with(['bus' , "driver" , "city_from" , "city_to"])->where('id',$id)->first();
+    //     return $paths;
+    //     // dd($paths);
+    // }
 }

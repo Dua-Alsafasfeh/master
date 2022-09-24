@@ -17,9 +17,6 @@ class BusStationController extends Controller
         $cities = City::get();
         return view('userside.home' , compact('cities'));
     }
-    // public function viewSchedule(){
-    //     return view('userside.schedule');
-    // }
     public function viewAbout(){
         return view('userside.about');
     }
@@ -36,7 +33,7 @@ class BusStationController extends Controller
         return view('auth.login');
     }
 
-    // get trip details
+    ///////////////////////////////////////////////////////////// get trip details
     public function viewBooking(Request $request){
         $request->validate([
             "from_id" => "required",
@@ -51,7 +48,7 @@ class BusStationController extends Controller
         return view('userside.booking' , compact("trips" , "city_from" , "city_to"));
     }
 
-    // store booking details
+    ////////////////////////////////////////////////////////// store booking details
     public function  storeBokking(Request $request , Trip $trip ){
         $request->validate([
             "number" => "required|numeric|min:1|not_in:0|max:5"
@@ -73,76 +70,49 @@ class BusStationController extends Controller
             $trip_booking->save();
         }
         // dd($trip_booking);
-        // $user_id=Auth::user()->id;
-        // return back();
         return view('userside.payment' , compact('trip' , 'number','trip_booking'));
 
     }
-
-    //payment page
-    // public function viewPayment(){
-    //     return view('userside.payment');
-    // }
+    /////////////////////////////////////////////////////////////////////////payment page
     //payment section
-    public function storePayment(Request $request ,$tripBooking){
+    public function storePayment(Request $request ,$trip_id , $tripBooking){
         // $request->validate([
-        //     "person_name" => "required|string|max:255",
-        //     "card_num" => "required|max:16",
+        //     "person_name" => "required|regex:/^[\pL\s]+$/u|max:255",
+        //     "card_num" => "required|digits:16",
         //     "expiry" => "required|after:today",
-        //     "cvv" => "required|integer|max:3"
+        //     "cvv" => "required|digits:3",
         // ]);
         // dd($tripBooking);
+        $cost = DB::table('trip_bookings')->where('id', $tripBooking)->first();
         $payment = new Payment;
         $payment->person_name = $request->input('person_name');
         $payment->card_num = $request->input('card_num');
         $payment->expiry = $request->input('expiry');
         $payment->cvv = $request->input('cvv');
         $payment->user_id = Auth::user()->id;
-        $payment->total_price = $request->input('price');
+        $payment->total_price = $cost->total_cost;
         $payment->trip_bookings_id= $tripBooking;     
         $payment->save();
         
         DB::update('UPDATE trip_bookings set is_payment = 1 WHERE id=?', [$tripBooking]);
         // return back()->with('status','Trip has been Confirmed, and Payment completed successfully.Please print your TICKET');
 
-        $city_from =$request->input('city_from');
-        $city_to =$request->input('city_to');
-        $trip_date =$request->input('trip_date');
-        $trip_time =$request->input('trip_time');
-        $price=$request->input('price');
-        $number=$request->input('number');
-        $paid = DB::table('trip_bookings')->select('is_payment')->where('id',$tripBooking)->get();
-        if($paid === 0){
-            $is_paid = "NO";
-        }else{
-            $is_paid = "YES";
-        }
-        // dd($is_paid);
-        return view('userside.ticket' , compact('city_from','city_to','trip_date','trip_time','price','number','is_paid'));
+        // $paid = DB::table('trip_bookings')->select('is_payment')->where('id',$tripBooking)->get();
+        // dd($paid);
+        $ticket_details = Trip::with(['city_from','city_to'])->where('id',$trip_id)->first();
+        $paid = DB::table('trip_bookings')->where('id',$tripBooking)->first();
+        return view('userside.ticket' , compact('ticket_details','paid'));
     }
-      // ticket page
-    //   public function viewTicket(){       
-    //     return view('userside.ticket');
-    // }
+      /////////////////////////////////////////////////////////////////////// ticket page
       //unpaid ticket page
-      public function viewTicket_unpaid(Request $request,$tripBooking){
-        $city_from =$request->input('city_from');
-        $city_to =$request->input('city_to');
-        $trip_date =$request->input('trip_date');
-        $trip_time =$request->input('trip_time');
-        $price=$request->input('price');
-        $number=$request->input('number');
-        $paid = DB::table('trip_bookings')->select('is_payment')->where('id',$tripBooking)->get();
-        if($paid === 0){
-            $is_paid = "NO";
-        }else{
-            $is_paid = "YES";
-        }
-        // dd($is_paid);
-        return view('userside.ticket' , compact('city_from','city_to','trip_date','trip_time','price','number','is_paid'));
+      public function viewTicket_unpaid(Request $request, $trip_id , $tripBooking){
+        // return $trip_id;
+        $ticket_details = Trip::with(['city_from','city_to'])->where('id',$trip_id)->first();
+        $paid = DB::table('trip_bookings')->where('id',$tripBooking)->first();
+        // dd($paid->total_cost);
+        return view('userside.ticket' , compact('ticket_details','paid'));
     }
-
-    // cancel Booking
+    //////////////////////////////////////////////////////////////// cancel Booking
     public function deleteBooking($id){
         DB::table('trip_bookings')->where('id',$id)->delete();
         return redirect('/')->with('deleteBooking','Trip Booking Canceled Successfully.Thank You for Using Our Website!');

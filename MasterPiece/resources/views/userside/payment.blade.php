@@ -22,29 +22,19 @@ Payment
 <!-- Navbar End -->
 
 {{-- -----payment start---- --}}
-<div class="container  text-dark px-3 mt-3">
+{{-- <div class="container  text-dark px-3 mt-3">
     @if (session('status'))
         <div class="alert alert-primary" role="alert">
             {{ session('status') }}
         </div>
     @endif
-</div>
+</div> --}}
 {{-- {{$trip->id}}
-{{$number}}
-{{$trip->city_to->city_name}}
-{{ $trip->time }}
-{{ $trip->date }}
 {{$trip_booking->id}} --}}
 <div class="ml-auto d-flex justify-content-center">
     <div class="btn btn-dark m-3" id="ticket">
-        <form action="{{route('unpaidTicket',[$trip->id,$trip_booking->id])}}" method="post">
+        <form action="{{route('unpaidTicket',["trip_id" => $trip->id, "tripBooking" => $trip_booking->id])}}" method="get">
             @csrf
-            <input type="hidden" value="{{$trip->price * $number}}" name="price">
-            <input type="hidden" value="{{$trip->city_from->city_name}}" name="city_from">
-            <input type="hidden" value="{{$trip->city_to->city_name}}" name="city_to">
-            <input type="hidden" value="{{ $trip->date }}" name="trip_date">
-            <input type="hidden" value="{{ $trip->time }}" name="trip_time">
-            <input type="hidden" value="{{ $number }}" name="number">
         <span class="">
             <button type="submit" class="btn btn-primary">View Ticket</button>
         </span>
@@ -75,23 +65,17 @@ Payment
                     <div class="cardpay px-4">
                         {{-- <p class="h8 py-3">Payment Details</p> --}}
                         <div class="row gx-3">
-                            <form action="{{route('payment.details',$trip_booking->id)}}" method="POST">
+                            <form action="{{route('payment_details',["trip_id" => $trip->id, "tripBooking" => $trip_booking->id])}}" method="POST">
                             @csrf
-                            <input type="hidden" value="{{$trip->price * $number}}" name="price">
-                            <input type="hidden" value="{{$trip->city_from->city_name}}" name="city_from">
-                            <input type="hidden" value="{{$trip->city_to->city_name}}" name="city_to">
-                            <input type="hidden" value="{{ $trip->date }}" name="trip_date">
-                            <input type="hidden" value="{{ $trip->time }}" name="trip_time">
-                            <input type="hidden" value="{{ $number }}" name="number">
 
                             <div class="col-12">
                                 <div class="d-flex flex-column">
                                     <p class="text mb-1">Person Name</p>
-                                    <input class="form-control mb-3" type="text" placeholder="Name" name="person_name" value="{{old('person_name')}}" @error('person_name') is-invalid @enderror>
+                                    <input class="form-control mb-1 @error('person_name') is-invalid @enderror" type="text" placeholder="Name" name="person_name" value="{{old('person_name')}}" required>
 
                                     @error('person_name')
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
+                                            <p>{{ $message }}</p>
                                         </span>
                                     @enderror
                                 </div>
@@ -99,11 +83,11 @@ Payment
                             <div class="col-12">
                                 <div class="d-flex flex-column">
                                     <p class="text mb-1">Card Number</p>
-                                    <input class="form-control mb-3" type="text" name="card_num" value="{{old('card_num')}}" placeholder="1234 5678 435678"  @error('card_num') is-invalid @enderror>
+                                    <input class="form-control mb-1 @error('card_num') is-invalid @enderror" type="number" name="card_num" value="{{old('card_num')}}" placeholder="1234 5678 435678" required size="16">
 
                                     @error('card_num')
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
+                                            <p>{{ $message }}</p>
                                         </span>
                                     @enderror
                                 </div>
@@ -111,11 +95,11 @@ Payment
                             <div class="col-12">
                                 <div class="d-flex flex-column">
                                     <p class="text mb-1">Expiry</p>
-                                    <input class="form-control mb-3" type="date" name="expiry"  placeholder="DD/MM/YYYY" min="2022-09-0" value="{{old('expiry')}}"  @error('expiry') is-invalid @enderror>
+                                    <input class="form-control mb-1 @error('expiry') is-invalid @enderror" type="date" name="expiry"  placeholder="DD/MM/YYYY" min="2022-09-0" value="{{old('expiry')}}" required min="2022-09-29" >
 
                                     @error('expiry')
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
+                                            <p>{{ $message }}</p>
                                         </span>
                                     @enderror
                                 </div>
@@ -123,16 +107,16 @@ Payment
                             <div class="col-12">
                                 <div class="d-flex flex-column">
                                     <p class="text mb-1">CVV/CVC</p>
-                                    <input class="form-control mb-3 pt-2 " type="password" name="cvv" value="{{old('cvv')}}" placeholder="***"  @error('cvv') is-invalid @enderror>
+                                    <input class="form-control mb-1 pt-2 @error('cvv') is-invalid @enderror" type="password" name="cvv" value="{{old('cvv')}}" placeholder="***" required size="3">
 
                                     @error('cvv')
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
+                                            <p>{{ $message }}</p>
                                         </span>
                                     @enderror
                                 </div>
                             </div>
-                            <div class="form-group mt-3 mb-2 d-flex justify-content-center">
+                            <div class="form-group mt-1 mb-2 d-flex justify-content-center">
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-primary btn-block w-100" id="pay">
                                         Pay Now
@@ -152,6 +136,7 @@ Payment
     </div>
 </div>
 {{-- -----payment end---- --}}
+
 @endsection
 
 

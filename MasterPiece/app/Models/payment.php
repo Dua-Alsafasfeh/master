@@ -14,8 +14,5 @@ class Payment extends Model
         'card_num',
         'expiry',
         'cvv',
-        'trip_bookings_id',
-        'user_id',
-        'total_price',
     ];
 }

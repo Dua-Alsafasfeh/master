@@ -37,7 +37,7 @@ profile
                 <div class="card-header bg-dark d-flex">
                     <h4 class="m-0">
                         <i class="fa-solid fa-id-card"></i>
-                        Edit profile
+                        Edit Profile
                     </h4>
                 </div>
 
@@ -47,7 +47,7 @@ profile
                             <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
                                 <a data-toggle="pill" href="#v-pills-profile-info" role="tab"
                                    class="nav-link {{ ! $errors->hasAny(['password', 'current_password']) ? 'active' : ''}}">
-                                    Profile information
+                                    Profile Information
                                 </a>
                                 {{-- <a class="nav-link {{ $errors->hasAny(['password', 'current_password']) ? 'active' : ''}}"
                                     data-toggle="pill" href="#v-pills-password" role="tab">

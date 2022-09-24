@@ -51,7 +51,12 @@ Schedule
     <td >{{$item->driver->phone_number}}</td>
     <td >{{$item->price}}</td>
     <td >{{$item->bus->size}}</td>
-    <td ><button type="button" class="btn btn-outline-primary" id="showbtn">Show</button></td> 
+    <td >
+      {{-- <form action="{{route('path',$item->id)}}" method="POST">
+        @csrf --}}
+      <button type="submit" onclick="setItemData('{{$item->city_from->city_name }} ',' {{$item->path}}', '{{$item->city_to->city_name}}')"  class="btn btn-outline-primary" id="showbtn">Show</button>
+    {{-- </form> --}}
+    </td> 
   </tr>
 @endforeach
 </tbody>
@@ -75,17 +80,17 @@ Schedule
        <span class="text-dark h5"> 
        <i class="fa-solid fa-road text-dark"></i>
        &nbsp;Start :</span>
-       <span class="text-primary h5">{{$item->city_from->city_name}}</span>
+       <span class="text-primary h5" id="m_city_from"></span>
        <br>
        <i class="fa-solid fa-location-dot text-primary"></i>&nbsp;
-       <span class="text-dark h5">{{$item->path}}</span>
+       <span class="text-dark h5" id="m_path"></span>
        &nbsp;<i class="fa-solid fa-location-dot text-primary"></i>
         <br>
        <span class="text-dark h5">
         <i class="fa-solid fa-road-circle-check text-dark"></i>
         &nbsp;End : 
       </span>
-      <span class="text-primary h5">{{$item->city_to->city_name}}</span>
+      <span class="text-primary h5" id="m_city_to"></span>
       </div>
       {{-- <div class="modal-footer">
         <button type="button" class="btn btn-outline-primary" data-dismiss="modal" class="close">Close</button>
@@ -97,6 +102,15 @@ Schedule
 
 
   <script>
+
+// When the user clicks the button, open the modal
+  function setItemData(city_from , path , city_to){
+    modal.style.display = "block";  
+    document.getElementById("m_city_from").innerHTML = city_from;
+    document.getElementById("m_path").innerHTML = path;
+    document.getElementById("m_city_to").innerHTML = city_to;
+  }
+
     // Get the modal
     var modal = document.getElementById("exampleModalCenter");
     
@@ -106,10 +120,7 @@ Schedule
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
     
-    // When the user clicks the button, open the modal 
-    btn.onclick = function() {
-      modal.style.display = "block";     
-    }
+     
     
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {

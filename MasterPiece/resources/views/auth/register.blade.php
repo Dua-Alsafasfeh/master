@@ -34,7 +34,7 @@ Register
 
         @error('first_name')
             <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
+                <p class="h6">{{ $message }}</p>
             </span>
         @enderror
         </div>
@@ -44,7 +44,7 @@ Register
 
         @error('last_name')
             <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
+                <p class="h6">{{ $message }}</p>
             </span>
         @enderror
         </div>
@@ -59,7 +59,7 @@ Register
 
         @error('email')
             <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
+                <p class="h6">{{ $message }}</p>
             </span>
         @enderror
     </div>
@@ -72,7 +72,7 @@ Register
 
     @error('password')
     <span class="invalid-feedback" role="alert">
-        <strong>{{ $message }}</strong>
+        <p class="h6">{{ $message }}</p>
     </span>
     @enderror                    
     </div>
@@ -90,7 +90,7 @@ Register
             <input id="phone" type="tel" class="form-control @error('phone') is-invalid @enderror rounded form-control-md"  name="phone" value="{{ old('phone') }}" autocomplete="phone">
             @error('phone')
                 <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
+                    <p class="h6">{{ $message }}</p>
                 </span>
             @enderror
     </div>
@@ -100,7 +100,7 @@ Register
     <label class="form-check-label"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a>
     </label> @error('check')
     <span class="invalid-feedback" role="alert">
-        <strong>{{ $message }}</strong>
+        <p class="h6">{{ $message }}</p>
     </span>
     @enderror
 </div>

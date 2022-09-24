@@ -66,7 +66,7 @@ Contact us
                 </div>
                 <div class="ps-4">
                     <h5 class="mb-2">Visit our office</h5>
-                    <h4 class="text-primary mb-0">aqaba, Jordan</h4>
+                    <h4 class="text-primary mb-0">Amman, Jordan</h4>
                 </div>
             </div>
         </div>

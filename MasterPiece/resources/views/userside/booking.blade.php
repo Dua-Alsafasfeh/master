@@ -20,7 +20,7 @@ Booking
     </div>
 </div>
 <!-- Navbar End -->
-<div class="container  text-dark px-3 mt-3">
+<div class="container text-dark px-3 mt-3">
     @if (session('no available seat'))
         <div class="alert alert-danger" role="alert">
             {{ session('no available seat') }}
@@ -55,6 +55,7 @@ Booking
                 </thead>
                 <tbody>
                     @foreach($trips as $trip)
+                    {{-- @if (($trip->date) > now()){ --}}
                     <tr>
                         <th scope="row">{{$trip->time . " / " . $trip->date}}</th>
                         <td>{{$trip->price . " JD"}}</td>
@@ -74,6 +75,8 @@ Booking
                         </td>
                          </form>
                     </tr>
+                {{-- } --}}
+                {{-- @endif --}}
                     @endforeach
                 </tbody>
             </table>
