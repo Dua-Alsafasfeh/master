@@ -48,5 +48,11 @@ Create a Bus Reservation System.
 1. Trello Board
    * [Trello link](https://trello.com/invite/b/XXDsyGF0/3a8125c8222bf5391067a159b954ad90/master-piece)
 
+1. Presentation
+   * [Presentation link](https://www.canva.com/design/DAFKWEgcjVk/0eKglFh1XIz3ZqfAaV6GJw/view?utm_content=DAFKWEgcjVk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
+1. Report
+   * [Report link](https://www.canva.com/design/DAFKqxEyNuA/L6-BAuw0mCGf-lq6ZE8MIg/view?utm_content=DAFKqxEyNuA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
 
    <a href='https://archiveprogram.github.com/'><img src='https://raw.githubusercontent.com/acervenky/animated-github-badges/master/assets/acbadge.gif' width='40' height='40'></a> 

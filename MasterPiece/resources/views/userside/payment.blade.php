@@ -83,7 +83,7 @@ Payment
                             <div class="col-12">
                                 <div class="d-flex flex-column">
                                     <p class="text mb-1">Card Number</p>
-                                    <input class="form-control mb-1 @error('card_num') is-invalid @enderror" type="number" name="card_num" value="{{old('card_num')}}" placeholder="1234 5678 435678" required size="16">
+                                    <input class="form-control mb-1 @error('card_num') is-invalid @enderror" type="number" name="card_num" value="{{old('card_num')}}" placeholder="1234 5678 435678" required minlength="16">
 
                                     @error('card_num')
                                         <span class="invalid-feedback" role="alert">
@@ -95,7 +95,7 @@ Payment
                             <div class="col-12">
                                 <div class="d-flex flex-column">
                                     <p class="text mb-1">Expiry</p>
-                                    <input class="form-control mb-1 @error('expiry') is-invalid @enderror" type="date" name="expiry"  placeholder="DD/MM/YYYY" min="2022-09-0" value="{{old('expiry')}}" required min="2022-09-29" >
+                                    <input class="form-control mb-1 @error('expiry') is-invalid @enderror" type="date" name="expiry"  placeholder="DD/MM/YYYY" value="{{old('expiry')}}" required min="2022-09-29" >
 
                                     @error('expiry')
                                         <span class="invalid-feedback" role="alert">
