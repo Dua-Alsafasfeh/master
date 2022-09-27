@@ -22,13 +22,14 @@ Payment
 <!-- Navbar End -->
 
 {{-- -----payment start---- --}}
-{{-- <div class="container  text-dark px-3 mt-3">
-    @if (session('status'))
+<div class="container  text-dark px-3 mt-3">
+    {{-- @if (session('note')) --}}
         <div class="alert alert-primary" role="alert">
-            {{ session('status') }}
+            Your Reservation has Done Successfully! 
+        If you want to pay by credit card;Please fill out the form below! or You can move to print Ticket directly by click on <strong> View Ticket </strong> button.
         </div>
-    @endif
-</div> --}}
+    {{-- @endif --}}
+</div>
 {{-- {{$trip->id}}
 {{$trip_booking->id}} --}}
 <div class="ml-auto d-flex justify-content-center">
@@ -71,7 +72,7 @@ Payment
                             <div class="col-12">
                                 <div class="d-flex flex-column">
                                     <p class="text mb-1">Person Name</p>
-                                    <input class="form-control mb-1 @error('person_name') is-invalid @enderror" type="text" placeholder="Name" name="person_name" value="{{old('person_name')}}" required>
+                                    <input class="form-control mb-1 @error('person_name') is-invalid @enderror" type="text" placeholder="Name" name="person_name" value="{{old('person_name')}}" required pattern="[A-Za-z\s]+" title="Your Name must contains alpha Characters only and spaces.">
 
                                     @error('person_name')
                                         <span class="invalid-feedback" role="alert">
@@ -83,7 +84,7 @@ Payment
                             <div class="col-12">
                                 <div class="d-flex flex-column">
                                     <p class="text mb-1">Card Number</p>
-                                    <input class="form-control mb-1 @error('card_num') is-invalid @enderror" type="number" name="card_num" value="{{old('card_num')}}" placeholder="1234 5678 435678" required minlength="16">
+                                    <input class="form-control mb-1 @error('card_num') is-invalid @enderror" type="text" name="card_num" value="{{old('card_num')}}" placeholder="1234 5678 435678" required pattern="[0-9]{16}" inputmode="numeric" title="Enter Your credit card Number which contains 16 digits">
 
                                     @error('card_num')
                                         <span class="invalid-feedback" role="alert">
@@ -107,7 +108,7 @@ Payment
                             <div class="col-12">
                                 <div class="d-flex flex-column">
                                     <p class="text mb-1">CVV/CVC</p>
-                                    <input class="form-control mb-1 pt-2 @error('cvv') is-invalid @enderror" type="password" name="cvv" value="{{old('cvv')}}" placeholder="***" required size="3">
+                                    <input class="form-control mb-1 pt-2 @error('cvv') is-invalid @enderror" type="password" name="cvv" value="{{old('cvv')}}" placeholder="***" required   pattern="[0-9]{3}" title="CVV must be 3 digits!">
 
                                     @error('cvv')
                                         <span class="invalid-feedback" role="alert">

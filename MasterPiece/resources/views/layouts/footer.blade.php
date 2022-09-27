@@ -82,7 +82,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-8 col-md-6">
                 <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
-                    <p class="mb-0">&copy; <a class="text-white border-bottom" href="/home">Bus Station</a>. All
+                    <p class="mb-0">&copy; <a class="text-white border-bottom" href="/">Bus Station</a>. All
                         Rights Reserved.
                     </p>
                 </div>
